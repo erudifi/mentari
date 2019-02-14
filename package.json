@@ -9,6 +9,19 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/danacita/mentari.git"
+  },
+  "homepage": "https://gitlab.com/danacita/mentari#readme",
+  "bugs": {
+    "url": "https://gitlab.com/danacita/mentari/issues"
+  },
+  "author": "Veri Ferdiansyah <veri@danacita.com>",
+  "contributors": [
+    "Faisal Amir <faisal@danacita.com>"
+  ],
+  "license": "MIT",
   "browserslist": [
     ">0.2%",
     "not dead",
