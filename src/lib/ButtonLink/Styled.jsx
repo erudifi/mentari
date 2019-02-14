@@ -1,14 +1,13 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Color from '../Styles/bases/Color';
 import { Transition } from '../Styles/utils';
 
-const ButtonWrapper = styled.button`
+const ButtonLink = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  max-height: 44px;
   padding: 8px 16px;
   border-radius: 4px;
   font-weight: 600;
@@ -16,7 +15,6 @@ const ButtonWrapper = styled.button`
   color: ${Color.grey111};
   border: 1px solid ${Color.grey191};
   cursor: pointer;
-  position: relative;
   width: ${props => (props.block ? '100%' : 'auto')};
   ${Transition('all ease-in-out 0.2s')};
   ${props =>
@@ -31,11 +29,12 @@ const ButtonWrapper = styled.button`
     props.colorType
       ? css`
           background-color: ${Color.blue};
-          color: ${Color.white};
+          color: ${Color.white} !important;
           border: none;
           &:hover,
           &:focus,
           &:active {
+            color: ${Color.white};
             background-color: ${Color.darkMdBlue};
           }
         `
@@ -45,10 +44,11 @@ const ButtonWrapper = styled.button`
       ? css`
           background-color: ${Color.white};
           border: 1px solid ${Color.blue};
-          color: ${Color.blue};
+          color: ${Color.blue} !important;
           &:hover,
           &:focus,
           &:active {
+            color: ${Color.blue};
             background-color: ${Color.white};
           }
         `
@@ -63,32 +63,11 @@ const ButtonWrapper = styled.button`
           &:hover,
           &:focus,
           &:active {
+            color: ${Color.grey191};
             background-color: ${Color.grey239};
           }
         `
       : null};
 `;
 
-const rotateSpinner = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const Loader = styled.span`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 12px;
-  left: calc(50% - 20px);
-  transform: translateX(-50%);
-  border-radius: 50%;
-  border-right: 2px solid transparent;
-  border-top: 2px solid ${Color.grey191};
-  animation: ${rotateSpinner} 1s linear infinite;
-`;
-
-export { ButtonWrapper, Loader };
+export default ButtonLink;

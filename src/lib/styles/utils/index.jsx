@@ -1,5 +1,5 @@
 import Margin from './spacing/Margin';
-import Padding from './spacing/Paddding';
+import Padding from './spacing/Padding';
 import { MaxWidth, MinWidth } from './responsive';
 import Transition from './transition';
 

@@ -2,13 +2,14 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import { css } from 'emotion';
+
 import { SelectWrapper, SelectInput, SelectLabel } from './Styled';
-import Color from '../styles/bases/Color';
-import { Margin } from '../styles/utils';
+import Color from '../Styles/bases/Color';
+import { Margin } from '../Styles/utils';
 
 const propTypes = {
   placeholder: PropTypes.string,

@@ -3,7 +3,94 @@ import styled, { css } from 'styled-components';
 import Color from '../Styles/bases/Color';
 import { Transition } from '../Styles/utils';
 
-const TextFieldWrapper = styled.div`
+const MonthWrapper = styled.div`
+  .ryms-container {
+    width: 300px;
+    z-index: 100;
+    background: #fff;
+    border: 2px solid #eee;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+  }
+  .ryms-clickout {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: transparent;
+    display: none;
+  }
+  /*  SECTIONS  */
+  .ryms-section_mp {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /*  COLUMN SETUP  */
+  .ryms-col_mp {
+    display: block;
+    float: left;
+    text-align: center;
+  }
+  .ryms-col_mp:first-child {
+    margin-left: 0;
+  }
+
+  /*  GROUPING  */
+  .ryms-group_mp:before,
+  .group:after {
+    content: '';
+    display: table;
+  }
+  .ryms-group_mp:after {
+    clear: both;
+  }
+  .ryms-group_mp {
+    zoom: 1; /* For IE 6/7 */
+  }
+
+  /*  GRID OF THREE  */
+  .ryms-span_1_of_3_mp {
+    width: 33.33%;
+  }
+
+  .ryms-col_mp {
+    font-size: 16px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+
+  .ryms-col_mp:hover {
+    color: ${Color.black};
+    background-color: ${Color.grey239};
+    cursor: pointer;
+  }
+  .ryms-selected_date_mp {
+    font-size: 16px;
+    color: ${Color.darkBlue};
+    font-weight: bold;
+    padding-top: 13px;
+  }
+  .ryms-selected_cell {
+    background-color: ${Color.blue};
+    font-weight: 600;
+    font-style: normal;
+    color: ${Color.white};
+    border-radius: 4px;
+    &:hover {
+      background-color: ${Color.blue};
+      color: ${Color.white};
+    }
+  }
+  .ryms-arrows_mp {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
   position: relative;
   font-size: 16px;
   input:-webkit-autofill {
@@ -23,6 +110,7 @@ const TextFieldWrapper = styled.div`
     width: 100%;
     padding: 8px 16px;
     border-radius: 4px;
+    color: white;
     ${Transition('all ease-in-out 0.2s')} outline: none;
     &::placeholder {
       color: white;
@@ -92,6 +180,7 @@ const TextFieldWrapper = styled.div`
           input[type='number'],
           input[type='password'] {
             padding-top: 14px;
+            color: black;
             + label {
               top: -10px;
               color: ${Color.grey191};
@@ -136,61 +225,11 @@ const TextFieldWrapper = styled.div`
       : null};
 `;
 
-const TextFieldPrefix = styled.div`
+const MonthPrefix = styled.div`
   position: absolute;
   z-index: 2;
   top: 14px;
   left: 14px;
 `;
 
-const TextFieldSuffix = styled.div`
-  position: absolute;
-  z-index: 2;
-  top: 16px;
-  right: 14px;
-`;
-
-const TextFieldTooltip = styled.div`
-  position: absolute;
-  z-index: 4;
-  bottom: 64px;
-  left: 0;
-  background-color: ${Color.black};
-  padding: 8px 16px;
-  width: 100%;
-  max-width: 320px;
-  color: ${Color.white};
-  border-radius: 8px;
-  visibility: hidden;
-  opacity: 0;
-  &:before {
-    width: 20px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid ${Color.black};
-    content: '';
-    bottom: -10px;
-    left: 24px;
-    position: absolute;
-  }
-  ${TextFieldWrapper}:hover & {
-    visibility: visible;
-    opacity: 1;
-    ${Transition('opacity ease-in-out 0.4s')};
-  }
-`;
-
-const TextFieldOptional = styled.div`
-  text-align: right;
-  margin-top: 5px;
-  font-size: 14px;
-  ${props =>
-    props.error
-      ? css`
-          position: absolute;
-          right: 0;
-        `
-      : null}
-`;
-
-export { TextFieldWrapper, TextFieldPrefix, TextFieldSuffix, TextFieldTooltip, TextFieldOptional };
+export { MonthWrapper, MonthPrefix };

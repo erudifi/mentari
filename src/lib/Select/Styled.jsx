@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import Select from 'react-select';
 
-import Color from '../styles/bases/Color';
-import { Transition } from '../styles/utils';
+import Color from '../Styles/bases/Color';
+import { Transition } from '../Styles/utils';
 
 const SelectWrapper = styled.div`
   position: relative;

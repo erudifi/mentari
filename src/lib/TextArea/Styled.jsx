@@ -3,23 +3,19 @@ import styled, { css } from 'styled-components';
 import Color from '../Styles/bases/Color';
 import { Transition } from '../Styles/utils';
 
-const TextFieldWrapper = styled.div`
+const TextAreaWrapper = styled.div`
   position: relative;
   font-size: 16px;
-  input:-webkit-autofill {
+  textarea:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset;
     -webkit-box-shadow: 0 0 0px 1000px white inset;
   }
-  input[type='text'],
-  input[type='number'],
-  input[type='email'],
-  input[type='password'] {
+  textarea {
     position: relative;
     border: 1px solid ${Color.grey191};
     line-height: 1.6;
     display: block;
-    min-height: 49px;
-    max-height: 49px;
+    min-height: 46px;
     width: 100%;
     padding: 8px 16px;
     border-radius: 4px;
@@ -43,11 +39,11 @@ const TextFieldWrapper = styled.div`
     }
     + label {
       position: absolute;
-      z-index: 20;
+      z-index: 2;
       left: 8px;
       background-color: ${Color.white};
       padding: 0 8px;
-      top: 14px;
+      top: 12px;
       ${Transition('all ease-in-out 0.2s')};
       cursor: text;
       color: ${Color.grey191};
@@ -87,10 +83,7 @@ const TextFieldWrapper = styled.div`
   ${props =>
     props.valLength > 0
       ? css`
-          input[type='text'],
-          input[type='email'],
-          input[type='number'],
-          input[type='password'] {
+          textarea {
             padding-top: 14px;
             + label {
               top: -10px;
@@ -104,10 +97,7 @@ const TextFieldWrapper = styled.div`
   ${props =>
     props.touched && props.error
       ? css`
-          input[type='text'],
-          input[type='email'],
-          input[type='number'],
-          input[type='password'] {
+          textarea {
             border: 1px solid ${Color.red};
             &:focus,
             &:hover,
@@ -126,71 +116,18 @@ const TextFieldWrapper = styled.div`
   ${props =>
     props.hasPrefix
       ? css`
-          input[type='text'],
-          input[type='email'],
-          input[type='number'],
-          input[type='password'] {
+          textarea {
             padding-left: 44px;
           }
         `
       : null};
 `;
 
-const TextFieldPrefix = styled.div`
+const TextAreaPrefix = styled.div`
   position: absolute;
   z-index: 2;
-  top: 14px;
+  top: 12px;
   left: 14px;
 `;
 
-const TextFieldSuffix = styled.div`
-  position: absolute;
-  z-index: 2;
-  top: 16px;
-  right: 14px;
-`;
-
-const TextFieldTooltip = styled.div`
-  position: absolute;
-  z-index: 4;
-  bottom: 64px;
-  left: 0;
-  background-color: ${Color.black};
-  padding: 8px 16px;
-  width: 100%;
-  max-width: 320px;
-  color: ${Color.white};
-  border-radius: 8px;
-  visibility: hidden;
-  opacity: 0;
-  &:before {
-    width: 20px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid ${Color.black};
-    content: '';
-    bottom: -10px;
-    left: 24px;
-    position: absolute;
-  }
-  ${TextFieldWrapper}:hover & {
-    visibility: visible;
-    opacity: 1;
-    ${Transition('opacity ease-in-out 0.4s')};
-  }
-`;
-
-const TextFieldOptional = styled.div`
-  text-align: right;
-  margin-top: 5px;
-  font-size: 14px;
-  ${props =>
-    props.error
-      ? css`
-          position: absolute;
-          right: 0;
-        `
-      : null}
-`;
-
-export { TextFieldWrapper, TextFieldPrefix, TextFieldSuffix, TextFieldTooltip, TextFieldOptional };
+export { TextAreaWrapper, TextAreaPrefix };

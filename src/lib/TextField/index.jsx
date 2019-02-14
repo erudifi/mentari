@@ -11,8 +11,8 @@ import {
   TextFieldSuffix,
   TextFieldOptional
 } from './Styled';
-import Color from '../styles/bases/Color';
-import { Margin } from '../styles/utils';
+import Color from '../Styles/bases/Color';
+import { Margin } from '../Styles/utils';
 
 const propTypes = {
   id: PropTypes.string,
