@@ -1,6 +1,6 @@
 {
   "name": "@danacita/mentari",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -22,6 +22,15 @@
     "Faisal Amir <faisal@danacita.com>"
   ],
   "license": "MIT",
+  "keywords": [
+    "danacita",
+    "mentari",
+    "react",
+    "react-component",
+    "ui",
+    "component",
+    "components"
+  ],
   "browserslist": [
     ">0.2%",
     "not dead",
