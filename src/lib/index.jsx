@@ -2,6 +2,7 @@ import Avatar from './Avatar';
 import Button from './Button';
 import ButtonLink from './ButtonLink';
 import Checkbox from './Checkbox';
+import { Container, PreWrap, TextCenter, Section } from './Styles/bases/General';
 import Color from './Styles/bases/Color';
 import DatePicker from './DatePicker';
 import FlashMessage from './FlashMessage';
@@ -20,6 +21,7 @@ export {
   Checkbox,
   Col,
   Color,
+  Container,
   DatePicker,
   FlashMessage,
   Margin,
@@ -27,10 +29,13 @@ export {
   MinWidth,
   MonthPicker,
   Padding,
+  PreWrap,
   Radio,
   Row,
+  Section,
   Select,
   TextArea,
+  TextCenter,
   TextField,
   Transition
 };
