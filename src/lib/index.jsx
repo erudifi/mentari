@@ -8,6 +8,7 @@ import DatePicker from './DatePicker';
 import FlashMessage from './FlashMessage';
 import { Col, Row } from './Grid';
 import MonthPicker from './MonthPicker';
+import Progress from './Progress';
 import Radio from './Radio';
 import Select from './Select';
 import TextArea from './TextArea';
@@ -30,6 +31,7 @@ export {
   MonthPicker,
   Padding,
   PreWrap,
+  Progress,
   Radio,
   Row,
   Section,
