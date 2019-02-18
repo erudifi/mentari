@@ -4,7 +4,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import Color from '../styles/bases/Color';
+import Color from '../Styles/bases/Color';
 
 const propTypes = {
   size: PropTypes.number.isRequired,
