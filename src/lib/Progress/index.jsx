@@ -1,6 +1,4 @@
-// Background
-// https://codepen.io/bbrady/pen/ozrjKE
-
+/* Background https://codepen.io/bbrady/pen/ozrjKE */
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
