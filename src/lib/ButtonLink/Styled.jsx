@@ -15,6 +15,7 @@ const ButtonLink = styled.a`
   color: ${Color.grey111};
   border: 1px solid ${Color.grey191};
   cursor: pointer;
+  text-decoration: none;
   width: ${props => (props.block ? '100%' : 'auto')};
   ${Transition('all ease-in-out 0.2s')};
   ${props =>

@@ -63,7 +63,7 @@ FlashMessage.propTypes = propTypes;
 
 export default function flashMessage(type, content) {
   const alertDiv = document.createElement('div');
-  const height = document.getElementById('dc-sub-header') ? '136px' : '56px';
+  const height = document.getElementById('dc-sub-header') ? '141px' : '56px';
   alertDiv.setAttribute('id', 'dc-alert');
   alertDiv.style.position = 'fixed';
   alertDiv.style.zIndex = '100';

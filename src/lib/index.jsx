@@ -14,6 +14,7 @@ import Select from './Select';
 import TextArea from './TextArea';
 import TextField from './TextField';
 import { Margin, MaxWidth, MinWidth, Padding, Transition } from './Styles/utils';
+import SwitchField from './Switch';
 
 export {
   Avatar,
@@ -39,5 +40,6 @@ export {
   TextArea,
   TextCenter,
   TextField,
-  Transition
+  Transition,
+  SwitchField
 };
