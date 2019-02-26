@@ -15,6 +15,7 @@ import TextArea from './TextArea';
 import TextField from './TextField';
 import { Margin, MaxWidth, MinWidth, Padding, Transition } from './Styles/utils';
 import SwitchField from './Switch';
+import { FloatingArrow, FloatingWhastapp } from './Floating';
 
 export {
   Avatar,
@@ -41,5 +42,7 @@ export {
   TextCenter,
   TextField,
   Transition,
-  SwitchField
+  SwitchField,
+  FloatingArrow,
+  FloatingWhastapp
 };
