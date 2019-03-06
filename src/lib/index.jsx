@@ -15,7 +15,7 @@ import TextArea from './TextArea';
 import TextField from './TextField';
 import { Margin, MaxWidth, MinWidth, Padding, Transition } from './Styles/utils';
 import SwitchField from './Switch';
-import { FloatingArrow, FloatingWhastapp } from './Floating';
+import { FloatingArrow, FloatingWhatsAppButton } from './Floating';
 
 export {
   Avatar,
@@ -44,5 +44,5 @@ export {
   Transition,
   SwitchField,
   FloatingArrow,
-  FloatingWhastapp
+  FloatingWhatsAppButton
 };

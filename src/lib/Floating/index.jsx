@@ -1,4 +1,4 @@
 import FloatingArrow from './Arrow';
-import FloatingWhastapp from './Whatsapp';
+import FloatingWhatsAppButton from './Whatsapp';
 
-export { FloatingArrow, FloatingWhastapp };
+export { FloatingArrow, FloatingWhatsAppButton };

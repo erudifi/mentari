@@ -75,7 +75,7 @@ const DateWrapper = styled.div`
   }
   .react-datepicker-popper {
     width: 300px;
-    z-index: 50;
+    z-index: 400;
   }
   .react-datepicker {
     width: 100%;
