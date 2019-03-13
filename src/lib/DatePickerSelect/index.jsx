@@ -15,6 +15,7 @@ const propTypes = {
   label: PropTypes.string,
   defaultPickerValue: PropTypes.string,
   disabled: PropTypes.bool,
+  yearMaxOption: PropTypes.number,
   // input prop is passed by redux-form to keep field in sync with state
   input: PropTypes.shape({
     value: PropTypes.string,
@@ -31,7 +32,8 @@ const defaultProps = {
   testid: '',
   label: '',
   defaultPickerValue: '',
-  disabled: false
+  disabled: false,
+  yearMaxOption: 0
 };
 
 class DatePickerSelect extends Component {
@@ -112,6 +114,7 @@ class DatePickerSelect extends Component {
       testid,
       defaultPickerValue,
       input,
+      yearMaxOption,
       disabled,
       meta: { error, touched }
     } = this.props;
@@ -157,7 +160,7 @@ class DatePickerSelect extends Component {
           disabled={disabled}
         >
           <option value="">Tahun</option>
-          {this.renderYearOption(new Date().getFullYear(), 1949)}
+          {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
         </select>
         {touched && error && (
           <Margin top={8}>
