@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/label-has-for */
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import {
   TextFieldWrapper,
   TextFieldPrefix,
@@ -121,9 +120,12 @@ const TextField = ({
       <Margin top={8}>
         <span style={{ color: Color.red }}>{error}</span>
         {error === 'Alamat email sudah terdaftar' ? (
-          <Link style={{ color: Color.blue, cursor: 'pointer' }} to="/login">
-            , Masuk di sini
-          </Link>
+          <Fragment>
+            . Masuk
+            <Link style={{ color: Color.blue, cursor: 'pointer' }} to="/login">
+              di sini
+            </Link>
+          </Fragment>
         ) : null}
       </Margin>
     )}

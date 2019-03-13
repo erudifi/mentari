@@ -16,6 +16,7 @@ import TextField from './TextField';
 import { Margin, MaxWidth, MinWidth, Padding, Transition } from './Styles/utils';
 import SwitchField from './Switch';
 import { FloatingArrow, FloatingWhatsAppButton } from './Floating';
+import DatePickerSelect from './DatePickerSelect';
 
 export {
   Avatar,
@@ -44,5 +45,6 @@ export {
   Transition,
   SwitchField,
   FloatingArrow,
-  FloatingWhatsAppButton
+  FloatingWhatsAppButton,
+  DatePickerSelect
 };
