@@ -152,7 +152,7 @@ const TextFieldSuffix = styled.div`
 
 const TextFieldTooltip = styled.div`
   position: absolute;
-  z-index: 4;
+  z-index: 26;
   bottom: 64px;
   left: 0;
   background-color: ${Color.black};
