@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -61,7 +62,7 @@ const TextArea = ({
       name={name}
       rows="3"
       placeholder={placeholder}
-      value={disabled ? '' : input.value === undefined ? '' : input.value}
+      value={disabled ? undefined : input.value}
       onBlur={input.onBlur}
       onChange={input.onChange}
       disabled={disabled}

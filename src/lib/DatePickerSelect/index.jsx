@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-did-update-set-state */
 /* eslint-disable no-plusplus */
 /* eslint-disable class-methods-use-this */
@@ -124,7 +125,7 @@ class DatePickerSelect extends Component {
           type="hidden"
           id={id}
           name={input.name}
-          value={disabled ? '' : input.value ? input.value : defaultPickerValue}
+          value={disabled ? undefined : input.value ? input.value : defaultPickerValue}
           onChange={() => {}}
           onBlur={input.onBlur}
         />
@@ -137,7 +138,9 @@ class DatePickerSelect extends Component {
           className="dc-date"
           disabled={disabled}
         >
-          <option value="">Tanggal</option>
+          <option selected={disabled} value="">
+            Tanggal
+          </option>
           {this.renderDateOption(31)}
         </select>
         <select
@@ -148,7 +151,9 @@ class DatePickerSelect extends Component {
           className="dc-month"
           disabled={disabled}
         >
-          <option value="">Bulan</option>
+          <option selected={disabled} value="">
+            Bulan
+          </option>
           {this.renderMonthOption(12)}
         </select>
         <select
@@ -159,7 +164,9 @@ class DatePickerSelect extends Component {
           className="dc-year"
           disabled={disabled}
         >
-          <option value="">Tahun</option>
+          <option selected={disabled} value="">
+            Tahun
+          </option>
           {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
         </select>
         {touched && error && (
