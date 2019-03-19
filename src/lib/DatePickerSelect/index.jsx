@@ -41,10 +41,10 @@ class DatePickerSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectDate: props.disabled ? undefined : '',
-      selectMonth: props.disabled ? undefined : '',
-      selectYear: props.disabled ? undefined : '',
-      valueHidden: props.disabled ? undefined : ''
+      selectDate: '',
+      selectMonth: '',
+      selectYear: '',
+      valueHidden: ''
     };
     this.renderDateOption = this.renderDateOption.bind(this);
     this.renderMonthOption = this.renderMonthOption.bind(this);
@@ -150,9 +150,7 @@ class DatePickerSelect extends Component {
           className="dc-date"
           disabled={disabled}
         >
-          <option selected={!!disabled} value="">
-            Tanggal
-          </option>
+          <option value="">Tanggal</option>
           {this.renderDateOption(31)}
         </select>
         <select
@@ -163,9 +161,7 @@ class DatePickerSelect extends Component {
           className="dc-month"
           disabled={disabled}
         >
-          <option selected={disabled} value="">
-            Bulan
-          </option>
+          <option value="">Bulan</option>
           {this.renderMonthOption(12)}
         </select>
         <select
@@ -176,9 +172,7 @@ class DatePickerSelect extends Component {
           className="dc-year"
           disabled={disabled}
         >
-          <option selected={disabled} value="">
-            Tahun
-          </option>
+          <option value="">Tahun</option>
           {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
         </select>
         {touched && error && (
