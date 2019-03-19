@@ -1,6 +1,6 @@
 {
   "name": "@danacita/mentari",
-  "version": "0.19.9",
+  "version": "0.20.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {

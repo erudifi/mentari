@@ -41,9 +41,9 @@ class DatePickerSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectDate: '',
-      selectMonth: '',
-      selectYear: '',
+      selectDate: props.disabled ? undefined : '',
+      selectMonth: props.disabled ? undefined : '',
+      selectYear: props.disabled ? undefined : '',
       valueHidden: props.disabled ? undefined : ''
     };
     this.renderDateOption = this.renderDateOption.bind(this);
@@ -52,18 +52,29 @@ class DatePickerSelect extends Component {
     this.handleChangeDate = this.handleChangeDate.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    const { disabled } = this.props;
+    if (prevProps.disabled !== disabled) {
+      this.setState({
+        selectDate: '',
+        selectMonth: '',
+        selectYear: ''
+      });
+    }
+  }
+
   handleChangeDate(e) {
     const { selectDate, selectMonth, selectYear } = this.state;
-    const { input, defaultPickerValue, disabled } = this.props;
+    const { input, defaultPickerValue } = this.props;
     this.setState(
       {
         [e.target.name]: e.target.value
       },
       () => {
         input.onChange(
-          `${disabled ? undefined : selectYear || moment(defaultPickerValue).format('YYYY')}-${
-            disabled ? undefined : selectMonth || moment(defaultPickerValue).format('MM')
-          }-${disabled ? undefined : selectDate || moment(defaultPickerValue).format('DD')}`
+          `${selectYear || moment(defaultPickerValue).format('YYYY')}-${selectMonth ||
+            moment(defaultPickerValue).format('MM')}-${selectDate ||
+            moment(defaultPickerValue).format('DD')}`
         );
       }
     );
@@ -126,42 +137,48 @@ class DatePickerSelect extends Component {
           type="hidden"
           id={id}
           name={input.name}
-          value={valueHidden || (input.value ? input.value : defaultPickerValue)}
+          value={valueHidden || input.value ? input.value : defaultPickerValue}
           onChange={() => {}}
           onBlur={input.onBlur}
         />
         <p>{label}</p>
         <select
           name="selectDate"
-          value={disabled ? undefined : selectDate || moment(defaultPickerValue).format('DD')}
+          value={selectDate || moment(defaultPickerValue).format('DD')}
           onChange={this.handleChangeDate}
           onBlur={this.handleChangeDate}
           className="dc-date"
           disabled={disabled}
         >
-          <option value="">Tanggal</option>
+          <option selected={!!disabled} value="">
+            Tanggal
+          </option>
           {this.renderDateOption(31)}
         </select>
         <select
           name="selectMonth"
-          value={disabled ? undefined : selectMonth || moment(defaultPickerValue).format('MM')}
+          value={selectMonth || moment(defaultPickerValue).format('MM')}
           onChange={this.handleChangeDate}
           onBlur={this.handleChangeDate}
           className="dc-month"
           disabled={disabled}
         >
-          <option value="">Bulan</option>
+          <option selected={disabled} value="">
+            Bulan
+          </option>
           {this.renderMonthOption(12)}
         </select>
         <select
           name="selectYear"
-          value={disabled ? undefined : selectYear || moment(defaultPickerValue).format('YYYY')}
+          value={selectYear || moment(defaultPickerValue).format('YYYY')}
           onChange={this.handleChangeDate}
           onBlur={this.handleChangeDate}
           className="dc-year"
           disabled={disabled}
         >
-          <option value="">Tahun</option>
+          <option selected={disabled} value="">
+            Tahun
+          </option>
           {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
         </select>
         {touched && error && (
