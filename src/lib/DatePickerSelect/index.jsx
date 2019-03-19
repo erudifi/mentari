@@ -124,7 +124,7 @@ class DatePickerSelect extends Component {
           type="hidden"
           id={id}
           name={input.name}
-          value={input.value ? input.value : defaultPickerValue}
+          value={disabled ? '' : input.value ? input.value : defaultPickerValue}
           onChange={() => {}}
           onBlur={input.onBlur}
         />

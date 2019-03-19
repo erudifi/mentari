@@ -61,7 +61,7 @@ const TextArea = ({
       name={name}
       rows="3"
       placeholder={placeholder}
-      value={input.value === undefined ? '' : input.value}
+      value={disabled ? '' : input.value === undefined ? '' : input.value}
       onBlur={input.onBlur}
       onChange={input.onChange}
       disabled={disabled}
