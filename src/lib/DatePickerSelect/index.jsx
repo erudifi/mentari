@@ -144,7 +144,7 @@ class DatePickerSelect extends Component {
         <p>{label}</p>
         <select
           name="selectDate"
-          value={selectDate || moment(defaultPickerValue).format('DD')}
+          value={disabled ? selectDate : selectDate || moment(defaultPickerValue).format('DD')}
           onChange={this.handleChangeDate}
           onBlur={this.handleChangeDate}
           className="dc-date"
@@ -155,7 +155,7 @@ class DatePickerSelect extends Component {
         </select>
         <select
           name="selectMonth"
-          value={selectMonth || moment(defaultPickerValue).format('MM')}
+          value={disabled ? selectMonth : selectMonth || moment(defaultPickerValue).format('MM')}
           onChange={this.handleChangeDate}
           onBlur={this.handleChangeDate}
           className="dc-month"
@@ -166,7 +166,7 @@ class DatePickerSelect extends Component {
         </select>
         <select
           name="selectYear"
-          value={selectYear || moment(defaultPickerValue).format('YYYY')}
+          value={disabled ? selectYear : selectYear || moment(defaultPickerValue).format('YYYY')}
           onChange={this.handleChangeDate}
           onBlur={this.handleChangeDate}
           className="dc-year"
