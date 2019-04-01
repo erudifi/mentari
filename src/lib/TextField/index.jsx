@@ -18,6 +18,7 @@ const propTypes = {
   testid: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
+  userExist: PropTypes.string,
   min: PropTypes.number,
   max: PropTypes.number,
   autoFocus: PropTypes.bool,
@@ -52,6 +53,7 @@ const defaultProps = {
   tooltip: null,
   disabled: false,
   optional: false,
+  userExist: null,
   min: null,
   max: null
 };
@@ -72,6 +74,7 @@ const TextField = ({
   tooltip,
   min,
   max,
+  userExist,
   meta: { error, touched }
 }) => (
   <TextFieldWrapper
@@ -119,10 +122,10 @@ const TextField = ({
     {touched && error && (
       <Margin top={8}>
         <span style={{ color: Color.red }}>{error}</span>
-        {error === 'Alamat email sudah terdaftar' ? (
+        {userExist && error === 'Alamat email sudah terdaftar' ? (
           <Fragment>
-            . Masuk
-            <Link style={{ color: Color.blue, cursor: 'pointer' }} to="/login">
+            . Masuk&nbsp;
+            <Link style={{ color: Color.blue, cursor: 'pointer' }} to={userExist}>
               di sini
             </Link>
           </Fragment>
