@@ -17,6 +17,7 @@ import { Margin, MaxWidth, MinWidth, Padding, Transition } from './Styles/utils'
 import SwitchField from './Switch';
 import { FloatingArrow, FloatingWhatsAppButton } from './Floating';
 import DatePickerSelect from './DatePickerSelect';
+import FileUploader from './FileUploader';
 
 export {
   Avatar,
@@ -46,5 +47,6 @@ export {
   SwitchField,
   FloatingArrow,
   FloatingWhatsAppButton,
-  DatePickerSelect
+  DatePickerSelect,
+  FileUploader
 };
