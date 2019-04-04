@@ -15,6 +15,7 @@ const propTypes = {
   testid: PropTypes.string,
   label: PropTypes.string,
   isDisabled: PropTypes.bool,
+  autoFocus: PropTypes.bool,
   customOnChange: PropTypes.func,
   fieldData: PropTypes.arrayOf(
     PropTypes.shape({
@@ -38,6 +39,7 @@ const defaultProps = {
   placeholder: null,
   testid: null,
   isDisabled: false,
+  autoFocus: false,
   withReset: false,
   label: '',
   customOnChange: () => {}
@@ -89,6 +91,7 @@ class SelectField extends Component {
   render() {
     const {
       placeholder,
+      autoFocus,
       isDisabled,
       fieldData,
       withReset,
@@ -105,6 +108,7 @@ class SelectField extends Component {
           <SelectInput
             // menuIsOpen
             placeholder={placeholder}
+            autoFocus={autoFocus}
             isDisabled={isDisabled}
             options={fieldData}
             components={{

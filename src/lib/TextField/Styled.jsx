@@ -13,7 +13,8 @@ const TextFieldWrapper = styled.div`
   input[type='text'],
   input[type='number'],
   input[type='email'],
-  input[type='password'] {
+  input[type='password'],
+  input[type='tel'] {
     position: relative;
     border: 1px solid ${Color.grey191};
     line-height: 1.6;
@@ -27,8 +28,7 @@ const TextFieldWrapper = styled.div`
     &::placeholder {
       color: white;
     }
-    &:focus,
-    &:active {
+    &:focus {
       border-color: ${Color.blue};
       padding-top: 14px;
       + label {
@@ -90,7 +90,8 @@ const TextFieldWrapper = styled.div`
           input[type='text'],
           input[type='email'],
           input[type='number'],
-          input[type='password'] {
+          input[type='password'],
+          input[type='tel'] {
             padding-top: 14px;
             + label {
               top: -10px;
@@ -107,7 +108,8 @@ const TextFieldWrapper = styled.div`
           input[type='text'],
           input[type='email'],
           input[type='number'],
-          input[type='password'] {
+          input[type='password'],
+          input[type='tel'] {
             border: 1px solid ${Color.red};
             &:focus,
             &:hover,
@@ -129,7 +131,8 @@ const TextFieldWrapper = styled.div`
           input[type='text'],
           input[type='email'],
           input[type='number'],
-          input[type='password'] {
+          input[type='password'],
+          input[type='tel'] {
             padding-left: 44px;
           }
         `
