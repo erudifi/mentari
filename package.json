@@ -1,6 +1,7 @@
 {
   "name": "@danacita/mentari",
-  "version": "0.21.3",
+  "description": "Dana Cita UI Kit",
+  "version": "0.21.4",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -11,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/danacita/mentari.git"
+    "url": "https://github.com/danacita/mentari.git"
   },
-  "homepage": "https://gitlab.com/danacita/mentari#readme",
+  "homepage": "https://github.com/danacita/mentari#readme",
   "bugs": {
-    "url": "https://gitlab.com/danacita/mentari/issues"
+    "url": "https://github.com/danacita/mentari/issues"
   },
   "author": "Veri Ferdiansyah <veri@danacita.com>",
   "contributors": [
