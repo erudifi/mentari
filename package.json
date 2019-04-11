@@ -6,9 +6,13 @@
   "module": "dist/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.jsx,test.jsx,__snapshots__",
+    "lint": "node_modules/.bin/eslint --ext .jsx --ignore-pattern .snap --ignore-pattern .svg src",
+    "pretest": "npm run test:clean && npm run lint",
+    "test": "CI=true react-scripts test --coverage",
+    "test:clean": "rimraf ./coverage",
+    "eject": "react-scripts eject",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -49,16 +53,20 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
+    "coveralls": "^3.0.3",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-react": "^7.11.1",
+    "fsevents": "^1.2.7",
     "react": "^16.3",
     "react-dom": "^16.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8",
+    "react-test-renderer": "^16.8.6",
+    "rimraf": "^2.6.3",
     "styled-components": "^4.1.3"
   },
   "peerDependencies": {

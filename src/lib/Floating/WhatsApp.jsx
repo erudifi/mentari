@@ -2,6 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import whatsappLogo from './whatsapp-logo.svg';
 
+const propTypes = {
+  phoneNumber: PropTypes.string
+};
+
+const defaultProps = {
+  phoneNumber: null
+};
+
 const FloatingWhatsAppButton = ({ phoneNumber }) => (
   <React.Fragment>
     <a
@@ -23,14 +31,6 @@ const FloatingWhatsAppButton = ({ phoneNumber }) => (
     </a>
   </React.Fragment>
 );
-
-const propTypes = {
-  phoneNumber: PropTypes.string
-};
-
-const defaultProps = {
-  phoneNumber: null
-};
 
 FloatingWhatsAppButton.propTypes = propTypes;
 FloatingWhatsAppButton.defaultProps = defaultProps;

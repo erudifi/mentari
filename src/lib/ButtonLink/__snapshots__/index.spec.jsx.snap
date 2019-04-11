@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonLink renders correctly 1`] = `
+<a
+  className="sc-htpNat kMfSEB"
+  data-testid=""
+  disabled={false}
+  href={null}
+  id=""
+  size={null}
+  style={null}
+  target={null}
+>
+  
+</a>
+`;

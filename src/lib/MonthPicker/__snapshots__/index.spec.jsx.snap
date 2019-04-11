@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonthPicker renders correctly 1`] = `
+<div
+  className="sc-htpNat CniZy"
+>
+  <input
+    autoComplete="off"
+    data-testid={null}
+    disabled={false}
+    id={null}
+    name={null}
+    onChange={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    placeholder={null}
+    readOnly={true}
+    type="text"
+    value="Value"
+  />
+  <label
+    htmlFor={null}
+  />
+  <div>
+    <div />
+  </div>
+</div>
+`;

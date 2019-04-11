@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders correctly 1`] = `
+<div
+  className="sc-bdVaJa bSrzPW"
+>
+  <input
+    className="sc-bwzfXH iesDFk"
+    data-testid=""
+    disabled={false}
+    id={null}
+    name={null}
+    onChange={[Function]}
+    type="checkbox"
+    value="Value"
+  />
+  <label
+    htmlFor={null}
+  >
+    <div
+      className="sc-bxivhb iIpWIv"
+    >
+      
+    </div>
+  </label>
+</div>
+`;

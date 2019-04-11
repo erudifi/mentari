@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileUploader renders correctly 1`] = `
+<div
+  className="sc-bdVaJa MXRVf"
+>
+  <div
+    className="sc-bwzfXH eWzXnO"
+  />
+  <p
+    htmlFor="fileUploader"
+  >
+    fileUploader
+  </p>
+  <input
+    accept=".jpg, .jpeg, .png"
+    id="fileUploader"
+    onChange={[Function]}
+    type="file"
+  />
+  <label
+    error=""
+    htmlFor="fileUploader"
+  >
+    <span>
+      fileUploader
+    </span>
+  </label>
+</div>
+`;

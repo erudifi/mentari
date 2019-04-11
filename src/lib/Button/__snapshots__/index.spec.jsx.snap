@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<button
+  className="sc-htpNat hOQbgW"
+  data-testid=""
+  disabled={false}
+  id=""
+  onClick={null}
+  size={null}
+  style={null}
+  type=""
+>
+  
+</button>
+`;

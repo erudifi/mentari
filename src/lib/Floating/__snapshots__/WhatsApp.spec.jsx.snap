@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WhatsApp renders correctly 1`] = `
+<a
+  href="https://api.whatsapp.com/send?phone=null"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <img
+    alt="FloatingWhatsAppButton"
+    src="whatsapp-logo.svg"
+    style={
+      Object {
+        "bottom": "88px",
+        "position": "fixed",
+        "right": "12px",
+        "width": "71px",
+        "zIndex": 100,
+      }
+    }
+  />
+</a>
+`;

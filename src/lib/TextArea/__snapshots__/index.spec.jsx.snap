@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea renders correctly 1`] = `
+<div
+  className="sc-htpNat hGgDcc"
+  disabled={false}
+>
+  <textarea
+    data-testid=""
+    disabled={false}
+    id=""
+    name=""
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder={null}
+    rows="3"
+    value="Value"
+  />
+  <label
+    htmlFor=""
+  >
+    
+  </label>
+</div>
+`;

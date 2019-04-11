@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FloatingArrowWrapper, ArrowBounce } from './Styled';
 
+const propTypes = {
+  text: PropTypes.string,
+  withArrow: PropTypes.bool
+};
+
+const defaultProps = {
+  text: null,
+  withArrow: null
+};
+
 class FloatingArrow extends Component {
   constructor(props) {
     super(props);
@@ -43,16 +53,6 @@ class FloatingArrow extends Component {
     );
   }
 }
-
-const propTypes = {
-  text: PropTypes.string,
-  withArrow: PropTypes.bool
-};
-
-const defaultProps = {
-  text: null,
-  withArrow: null
-};
 
 FloatingArrow.propTypes = propTypes;
 FloatingArrow.defaultProps = defaultProps;

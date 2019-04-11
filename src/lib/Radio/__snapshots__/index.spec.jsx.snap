@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio renders correctly 1`] = `
+<div
+  className="sc-bdVaJa jCNFIm"
+>
+  <div
+    className="sc-bwzfXH dmdUcU"
+  >
+    <input
+      checked={false}
+      className="sc-htpNat gAWSad"
+      data-testid={1}
+      id={1}
+      onChange={[Function]}
+      type="radio"
+      value={1}
+    />
+    <label
+      htmlFor={1}
+    >
+      Test Name
+    </label>
+  </div>
+</div>
+`;
