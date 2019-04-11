@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField renders correctly 1`] = `
+<div
+  className="sc-htpNat icsxDp"
+  disabled={false}
+>
+  <input
+    autoComplete="on"
+    autoFocus={false}
+    data-testid=""
+    disabled={false}
+    id=""
+    max={null}
+    min={null}
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder=""
+    tooltip={null}
+    type="text"
+    value="Value"
+  />
+  <label
+    htmlFor=""
+  >
+    
+  </label>
+</div>
+`;
