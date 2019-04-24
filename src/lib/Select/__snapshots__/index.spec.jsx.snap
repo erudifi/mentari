@@ -13,11 +13,11 @@ exports[`Select renders correctly 1`] = `
       
     </span>
     <div
-      className="css-10nd86i sc-bxivhb dXPiEh"
+      className="css-1pcexqc-container sc-bxivhb dXPiEh"
       onKeyDown={[Function]}
     >
       <div
-        className="css-vj8t7z rselect__control"
+        className="css-bg1rzq-control rselect__control"
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
       >
@@ -25,7 +25,7 @@ exports[`Select renders correctly 1`] = `
           className="css-1hwfws3 rselect__value-container"
         >
           <div
-            className="css-1492t68 rselect__placeholder"
+            className="css-151xaom-placeholder rselect__placeholder"
           />
           <div
             className="css-1g6gooi"
@@ -56,6 +56,7 @@ exports[`Select renders correctly 1`] = `
                     "boxSizing": "content-box",
                     "color": "inherit",
                     "fontSize": "inherit",
+                    "label": "input",
                     "opacity": 1,
                     "outline": 0,
                     "padding": 0,
@@ -88,11 +89,11 @@ exports[`Select renders correctly 1`] = `
           className="css-1wy0on6 rselect__indicators"
         >
           <span
-            className="css-d8oujb rselect__indicator-separator"
+            className="css-bgvzuu-indicatorSeparator rselect__indicator-separator"
           />
           <div
             aria-hidden="true"
-            className="css-1ep9fjw rselect__indicator rselect__dropdown-indicator"
+            className="css-16pqwjk-indicatorContainer rselect__indicator rselect__dropdown-indicator"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
