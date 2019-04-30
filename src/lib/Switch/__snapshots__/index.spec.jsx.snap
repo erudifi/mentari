@@ -5,6 +5,7 @@ exports[`Switch renders correctly 1`] = `
   className="sc-bdVaJa jBqTSZ"
 >
   <input
+    checked="Value"
     className="sc-bwzfXH gbvsbZ"
     disabled={false}
     onChange={[Function]}

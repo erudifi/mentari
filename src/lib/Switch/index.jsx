@@ -23,6 +23,7 @@ const SwitchField = ({ disabled, customOnChange, input }) => (
       <SwitchInput
         type="checkbox"
         disabled={disabled}
+        checked={input.value}
         onChange={value => {
           // Custom onChange function to make form dynamic
           customOnChange(value);
