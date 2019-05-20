@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { SidebarWrapper } from './Styled';
+import { LeftWrapper } from './Styled';
 import { Margin } from '../../../lib';
 
 const SidebarShared = () => (
-  <SidebarWrapper>
+  <LeftWrapper>
     <h3>Introduction</h3>
     <ul>
       <li>
@@ -65,7 +65,7 @@ const SidebarShared = () => (
         <a href="">Transition</a>
       </li>
     </ul>
-  </SidebarWrapper>
+  </LeftWrapper>
 );
 
 export default SidebarShared;

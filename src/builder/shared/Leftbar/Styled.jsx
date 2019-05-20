@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SidebarWrapper = styled.div`
+const LeftWrapper = styled.div`
   float: left;
   width: 200px;
   min-height: 100vh;
@@ -23,4 +23,4 @@ const SidebarWrapper = styled.div`
 `;
 
 // eslint-disable-next-line import/prefer-default-export
-export { SidebarWrapper };
+export { LeftWrapper };
