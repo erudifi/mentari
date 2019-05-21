@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import '../../index.scss';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import SidebarShared from '../shared/Sidebar';
+import SidebarShared from '../shared/Leftbar';
 import { ContentWrapper } from './Styled';
 import WelcomePage from './Welcome';
 import ButtonPage from './Button';
@@ -10,17 +10,17 @@ import ButtonPage from './Button';
 const history = createBrowserHistory();
 
 const MainPage = () => (
-  <Fragment>
-    <SidebarShared />
-    <ContentWrapper>
-      <Router history={history}>
+  <Router history={history}>
+    <Fragment>
+      <SidebarShared />
+      <ContentWrapper>
         <Switch>
           <Route exact path="/" component={WelcomePage} />
           <Route exact path="/button" component={ButtonPage} />
         </Switch>
-      </Router>
-    </ContentWrapper>
-  </Fragment>
+      </ContentWrapper>
+    </Fragment>
+  </Router>
 );
 
 export default MainPage;

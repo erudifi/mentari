@@ -1,68 +1,104 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { LeftWrapper } from './Styled';
-import { Margin } from '../../../lib';
+import { Margin, Color } from '../../../lib';
+
+const activeMenu = {
+  fontWeight: 600,
+  color: Color.darkBlue
+};
 
 const SidebarShared = () => (
   <LeftWrapper>
     <h3>Introduction</h3>
     <ul>
       <li>
-        <a href="/">Welcome</a>
+        <NavLink exact activeStyle={activeMenu} to="/">
+          Welcome
+        </NavLink>
       </li>
     </ul>
     <Margin vertical={20} />
     <h3>Foundation</h3>
     <ul>
       <li>
-        <a href="">Color</a>
+        <NavLink exact activeStyle={activeMenu} to="/color">
+          Color
+        </NavLink>
       </li>
       <li>
-        <a href="">Grid</a>
+        <NavLink exact activeStyle={activeMenu} to="/grid">
+          Grid
+        </NavLink>
       </li>
       <li>
-        <a href="">Typography</a>
+        <NavLink exact activeStyle={activeMenu} to="/typography">
+          Typography
+        </NavLink>
       </li>
     </ul>
     <Margin vertical={20} />
     <h3>Components</h3>
     <ul>
       <li>
-        <a href="">Accordion</a>
+        <NavLink exact activeStyle={activeMenu} to="/accordion">
+          Accordion
+        </NavLink>
       </li>
       <li>
-        <a href="">Avatar</a>
+        <NavLink exact activeStyle={activeMenu} to="/avatar">
+          Avatar
+        </NavLink>
       </li>
       <li>
-        <a href="/button">Button</a>
+        <NavLink exact activeStyle={activeMenu} to="/button">
+          Button
+        </NavLink>
       </li>
       <li>
-        <a href="">Checkbox</a>
+        <NavLink exact activeStyle={activeMenu} to="/checkbox">
+          Checkbox
+        </NavLink>
       </li>
       <li>
-        <a href="">Radio</a>
+        <NavLink exact activeStyle={activeMenu} to="/radio">
+          Radio
+        </NavLink>
       </li>
       <li>
-        <a href="">Select</a>
+        <NavLink exact activeStyle={activeMenu} to="/select">
+          Select
+        </NavLink>
       </li>
       <li>
-        <a href="">Textarea</a>
+        <NavLink exact activeStyle={activeMenu} to="/textarea">
+          Textarea
+        </NavLink>
       </li>
       <li>
-        <a href="">Textfield</a>
+        <NavLink exact activeStyle={activeMenu} to="/textfield">
+          Textfield
+        </NavLink>
       </li>
     </ul>
     <Margin vertical={20} />
     <h3>Utilities</h3>
     <ul>
       <li>
-        <a href="">Responsive</a>
+        <NavLink exact activeStyle={activeMenu} to="/responsive">
+          Responsive
+        </NavLink>
       </li>
       <li>
-        <a href="">Spacing</a>
+        <NavLink exact activeStyle={activeMenu} to="/spacing">
+          Spacing
+        </NavLink>
       </li>
       <li>
-        <a href="">Transition</a>
+        <NavLink exact activeStyle={activeMenu} to="/transition">
+          Transition
+        </NavLink>
       </li>
     </ul>
   </LeftWrapper>

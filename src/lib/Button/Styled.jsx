@@ -12,11 +12,13 @@ const ButtonWrapper = styled.button`
   padding: 8px 16px;
   border-radius: 4px;
   font-weight: 600;
+  font-size: 16px;
   background-color: ${Color.white};
   color: ${Color.grey111};
   border: 1px solid ${Color.grey191};
   cursor: pointer;
   position: relative;
+  font-family: inherit;
   width: ${props => (props.block ? '100%' : 'auto')};
   ${Transition('all ease-in-out 0.2s')};
   ${props =>
