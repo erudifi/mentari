@@ -6,7 +6,7 @@ const RightbarWrapper = styled.div`
   width: 320px;
   top: 0;
   right: 0;
-  padding: 24px 16px;
+  padding: 24px;
   border-left: 1px solid #e1e1e1;
 `;
 

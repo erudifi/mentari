@@ -30,7 +30,7 @@ const ButtonWrapper = styled.button`
         `
       : null};
   ${props =>
-    props.colorType
+    props.colorType === 'blue'
       ? css`
           background-color: ${Color.blue};
           color: ${Color.white};
@@ -43,7 +43,7 @@ const ButtonWrapper = styled.button`
         `
       : null};
   ${props =>
-    props.colorType && props.outline
+    props.colorType === 'blue' && props.outline
       ? css`
           background-color: ${Color.white};
           border: 1px solid ${Color.blue};

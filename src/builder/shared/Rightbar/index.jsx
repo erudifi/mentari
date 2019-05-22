@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RightbarWrapper } from './Styled';
+import { Margin } from '../../../lib';
 
 const propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired
 };
 
-const RightbarShared = ({ children }) => (
+const RightbarShared = ({ children, title }) => (
   <RightbarWrapper>
-    <h3>Builder</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    {children}
+    <h3>Builder component</h3>
+    <p>{`You can make a ${title} with the properties provided below`}</p>
+    <Margin top={24}>{children}</Margin>
   </RightbarWrapper>
 );
 

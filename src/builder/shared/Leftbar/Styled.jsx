@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 const LeftWrapper = styled.div`
-  float: left;
+  position: fixed;
+  left: 0;
   width: 200px;
   min-height: 100vh;
   padding: 24px 16px;
   border-right: 1px solid #e1e1e1;
+  z-index: 2;
   h3 {
     margin-bottom: 8px;
   }
