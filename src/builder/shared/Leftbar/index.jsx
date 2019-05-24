@@ -19,7 +19,7 @@ const SidebarShared = () => (
         </NavLink>
       </li>
     </ul>
-    <Margin vertical={20} />
+    {/* <Margin vertical={20} />
     <h3>Foundation</h3>
     <ul>
       <li>
@@ -37,11 +37,11 @@ const SidebarShared = () => (
           Typography
         </NavLink>
       </li>
-    </ul>
+    </ul> */}
     <Margin vertical={20} />
     <h3>Components</h3>
     <ul>
-      <li>
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/accordion">
           Accordion
         </NavLink>
@@ -50,13 +50,13 @@ const SidebarShared = () => (
         <NavLink exact activeStyle={activeMenu} to="/avatar">
           Avatar
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink exact activeStyle={activeMenu} to="/button">
           Button
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/checkbox">
           Checkbox
         </NavLink>
@@ -80,9 +80,9 @@ const SidebarShared = () => (
         <NavLink exact activeStyle={activeMenu} to="/textfield">
           Textfield
         </NavLink>
-      </li>
+      </li> */}
     </ul>
-    <Margin vertical={20} />
+    {/* <Margin vertical={20} />
     <h3>Utilities</h3>
     <ul>
       <li>
@@ -100,7 +100,7 @@ const SidebarShared = () => (
           Transition
         </NavLink>
       </li>
-    </ul>
+    </ul> */}
   </LeftWrapper>
 );
 

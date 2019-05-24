@@ -160,7 +160,7 @@ class ButtonPage extends Component {
               name="buttonOutline"
               label="Outline"
               checked={buttonOutline}
-              disabled={buttonColor === 'default'}
+              disabled={buttonColor === 'defaultButtonColor'}
               withRedux={false}
               onChange={e => this.setState({ buttonOutline: e.target.checked })}
             />
