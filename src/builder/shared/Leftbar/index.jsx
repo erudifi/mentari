@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { LeftWrapper } from './Styled';
 import { Margin, Color } from '../../../lib';
 
@@ -9,8 +10,12 @@ const activeMenu = {
   color: Color.darkBlue
 };
 
-const SidebarShared = () => (
-  <LeftWrapper>
+const propTypes = {
+  menuMobile: PropTypes.bool.isRequired
+};
+
+const SidebarShared = ({menuMobile}) => (
+  <LeftWrapper menuMobile={menuMobile}>
     <h3>Introduction</h3>
     <ul>
       <li>
@@ -103,5 +108,7 @@ const SidebarShared = () => (
     </ul> */}
   </LeftWrapper>
 );
+
+SidebarShared.propTypes = propTypes;
 
 export default SidebarShared;

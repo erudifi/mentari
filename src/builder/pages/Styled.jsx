@@ -20,7 +20,10 @@ const HeaderMenuMobile = styled.div`
     border-bottom: 1px solid ${Color.grey216}
     padding: 16px;
     text-align: center;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: ${Color.white};
     h2 {
       margin-bottom: 0;
     }
@@ -35,11 +38,12 @@ const TrigerMenuMobile = styled.div`
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  margin-top: 4px;
   div {
     background-color: ${Color.grey82};
     display: block;
     width: 24px;
-    height: 4px;
+    height: 2px;
     margin-bottom: 4px;
     border-radius: 4px;
   }

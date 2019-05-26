@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { MaxWidth } from '../../../lib';
+import styled, {css} from 'styled-components';
+import { MaxWidth, Color } from '../../../lib';
 
 const LeftWrapper = styled.div`
   position: fixed;
@@ -9,6 +9,7 @@ const LeftWrapper = styled.div`
   padding: 24px 16px;
   border-right: 1px solid #e1e1e1;
   z-index: 2;
+  transition: all ease .4s;
   h3 {
     margin-bottom: 8px;
   }
@@ -19,12 +20,19 @@ const LeftWrapper = styled.div`
         padding: 6px 0;
         display: block;
         text-decoration: none;
-        color: black;
+        color: ${Color.black};
       }
     }
   }
   ${MaxWidth.md`
-    display: none;
+    ${props => props.menuMobile ? css`
+      transform: translateX(0);
+      background-color: ${Color.white};
+      padding-top: 80px;
+      min-height: calc(100vh + 16px);
+    ` : css`
+      transform: translateX(-100%);
+    `}
   `}
 `;
 
