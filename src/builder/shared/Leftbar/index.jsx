@@ -19,7 +19,7 @@ const SidebarShared = () => (
         </NavLink>
       </li>
     </ul>
-    {/* <Margin vertical={20} />
+    <Margin vertical={20} />
     <h3>Foundation</h3>
     <ul>
       <li>
@@ -27,17 +27,17 @@ const SidebarShared = () => (
           Color
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/grid">
           Grid
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/typography">
           Typography
         </NavLink>
-      </li>
-    </ul> */}
+      </li> */}
+    </ul>
     <Margin vertical={20} />
     <h3>Components</h3>
     <ul>

@@ -5,7 +5,7 @@ const PropsWrapper = styled.div`
   ul {
     margin-left: 24px;
     li {
-      padding: 8px 0;
+      padding: 10px 0;
       span {
         &:first-child {
           background-color: ${Color.lightBlue};
