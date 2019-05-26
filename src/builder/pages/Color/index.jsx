@@ -6,7 +6,7 @@ const ColorPgae = () => (
   <Fragment>
     <h1>Color</h1>
     <p>
-      While the brand is ever-evolving, the Danacita brand currently consists of six primary colors
+      The Danacita brand currently consists of six primary colors
       that are used in a wide array of marketing materials.
     </p>
     <Margin top={48} bottom={16}>
