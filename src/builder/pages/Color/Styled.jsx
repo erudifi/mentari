@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Color } from '../../../lib';
+import { Color, MaxWidth } from '../../../lib';
 
 const ColorBox = styled.div`
   display: inline-block;
@@ -13,6 +13,12 @@ const ColorBox = styled.div`
   color: ${Color.white};
   font-weight: 800;
   text-transform: uppercase;
+  ${MaxWidth.md`
+    width: calc(100% / 2 - 24px);
+  `}
+  ${MaxWidth.sm`
+    width: 100%;
+  `}
   ${props =>
     props.bgColor === 'lightBlue'
       ? css`

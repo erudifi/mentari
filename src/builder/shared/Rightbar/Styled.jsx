@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MaxWidth } from '../../../lib';
 
 const RightbarWrapper = styled.div`
   position: fixed;
@@ -8,6 +9,9 @@ const RightbarWrapper = styled.div`
   right: 0;
   padding: 24px;
   border-left: 1px solid #e1e1e1;
+  ${MaxWidth.md`
+    display: none;
+  `}
 `;
 
 // eslint-disable-next-line import/prefer-default-export

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MaxWidth } from '../../../lib';
 
 const LeftWrapper = styled.div`
   position: fixed;
@@ -22,6 +23,9 @@ const LeftWrapper = styled.div`
       }
     }
   }
+  ${MaxWidth.md`
+    display: none;
+  `}
 `;
 
 // eslint-disable-next-line import/prefer-default-export
