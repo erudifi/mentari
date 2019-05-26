@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import RightbarShared from '../../shared/Rightbar';
@@ -6,6 +6,7 @@ import CodeShared from '../../shared/Code';
 import DemoShared from '../../shared/Demo';
 import PropsShared from '../../shared/Props';
 import { Button, TextField, Checkbox, Radio, Margin } from '../../../lib';
+import { ContentWithRightBar } from '../Styled';
 
 class ButtonPage extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class ButtonPage extends Component {
       buttonBlock ? ' block' : ''
     }${buttonDisable ? ' disabled' : ''}${buttonOutline ? ' outline' : ''}>${buttonText}</Button>`;
     return (
-      <Fragment>
+      <ContentWithRightBar>
         <h1>Button</h1>
         <p>Button is element represents a clickable, which can be used in forms</p>
         <Margin top={24}>
@@ -176,7 +177,7 @@ class ButtonPage extends Component {
             />
           </Margin>
         </RightbarShared>
-      </Fragment>
+      </ContentWithRightBar>
     );
   }
 }

@@ -6,7 +6,6 @@ const BottombarWrapper = styled.div`
 `;
 
 const BottombarButtonCopy = styled.div`
-  text-align: right;
   padding: 8px;
   display: inline-block;
   cursor: pointer;
