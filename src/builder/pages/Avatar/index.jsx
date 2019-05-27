@@ -29,11 +29,11 @@ class AvatarPage extends Component {
           <Margin top={24}>
             <PropsShared>
               <li>
-                <span>Profile</span>
+                <span>profile</span>
                 <span>Apply firstname and lastname with object</span>
               </li>
               <li>
-                <span>Square</span>
+                <span>square</span>
                 <span>Set the shape of Avatar</span>
               </li>
             </PropsShared>

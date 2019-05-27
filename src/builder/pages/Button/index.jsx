@@ -71,7 +71,7 @@ class ButtonPage extends Component {
             </li>
             <li>
               <span>size</span>
-              <span>Set size of button </span>
+              <span>Set size of Button </span>
             </li>
           </PropsShared>
         </Margin>
