@@ -30,7 +30,7 @@ class ButtonPage extends Component {
       buttonOutline,
       buttonSize
     } = this.state;
-    const codeString = `<Button${
+    const codeString = `import { Button } from '@danacita/mentari';\n<Button${
       buttonColor !== 'defaultButtonColor' ? ` color="${buttonColor}"` : ''
     }${buttonSize !== 'defaultButtonSize' ? ` size="${buttonSize}"` : ''}${
       buttonBlock ? ' block' : ''
@@ -93,7 +93,7 @@ class ButtonPage extends Component {
         <h4>Code</h4>
         <Margin top={16}>
           <CodeShared copyCode={codeString}>
-            <SyntaxHighlighter language="html" style={atomOneDarkReasonable} showLineNumbers>
+            <SyntaxHighlighter language="jsx" style={atomOneDarkReasonable} showLineNumbers>
               {codeString}
             </SyntaxHighlighter>
           </CodeShared>

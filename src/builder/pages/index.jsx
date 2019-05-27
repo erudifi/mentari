@@ -4,6 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import SidebarShared from '../shared/Leftbar';
 import { ContentWrapper, HeaderMenuMobile, TrigerMenuMobile } from './Styled';
+import AvatarPage from './Avatar';
 import ButtonPage from './Button';
 import ColorPage from './Color';
 import WelcomePage from './Welcome';
@@ -34,9 +35,10 @@ class MainPage extends Component {
           </HeaderMenuMobile>
           <ContentWrapper>
             <Switch>
-              <Route exact path="/" component={WelcomePage} />
+              <Route exact path="/avatar" component={AvatarPage} />
               <Route exact path="/color" component={ColorPage} />
               <Route exact path="/button" component={ButtonPage} />
+              <Route exact path="/" component={WelcomePage} />
             </Switch>
           </ContentWrapper>
         </Fragment>

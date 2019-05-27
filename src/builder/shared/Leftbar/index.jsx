@@ -14,7 +14,7 @@ const propTypes = {
   menuMobile: PropTypes.bool.isRequired
 };
 
-const SidebarShared = ({menuMobile}) => (
+const SidebarShared = ({ menuMobile }) => (
   <LeftWrapper menuMobile={menuMobile}>
     <h3>Introduction</h3>
     <ul>
@@ -50,12 +50,12 @@ const SidebarShared = ({menuMobile}) => (
         <NavLink exact activeStyle={activeMenu} to="/accordion">
           Accordion
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink exact activeStyle={activeMenu} to="/avatar">
           Avatar
         </NavLink>
-      </li> */}
+      </li>
       <li>
         <NavLink exact activeStyle={activeMenu} to="/button">
           Button
