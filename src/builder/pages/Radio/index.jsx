@@ -20,7 +20,9 @@ class RadioPage extends Component {
 
   render() {
     const { radioDefault, radioBlock, radioSlide } = this.state;
-    const codeString = `import { Radio } from '@danacita/mentari';\n<Radio fieldData={[{ id: 'one', name: 'Option one' }, { id: 'two', name: 'Option two' }, { id: 'three', name: 'Option three' }, { id: 'four', name: 'Option four' }]} ${radioBlock ? 'block ' : ''}${radioSlide ? 'slideOption' : ''}/>`;
+    const codeString = `import { Radio } from '@danacita/mentari';\n<Radio fieldData={[{ id: 'one', name: 'Option one' }, { id: 'two', name: 'Option two' }, { id: 'three', name: 'Option three' }, { id: 'four', name: 'Option four' }]} ${
+      radioBlock ? 'block ' : ''
+    }${radioSlide ? 'slideOption' : ''}/>`;
     return (
       <Fragment>
         <ContentWithRightBar>
@@ -35,6 +37,18 @@ class RadioPage extends Component {
               <li>
                 <span>name</span>
                 <span>Set the name of Radio</span>
+              </li>
+              <li>
+                <span>name</span>
+                <span>Set the name of Radio</span>
+              </li>
+              <li>
+                <span>slideOption</span>
+                <span>Apply the options to slide</span>
+              </li>
+              <li>
+                <span>block</span>
+                <span>Apply the full width of a parent</span>
               </li>
             </PropsShared>
           </Margin>
