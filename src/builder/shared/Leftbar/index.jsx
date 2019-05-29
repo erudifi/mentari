@@ -66,22 +66,22 @@ const SidebarShared = ({ menuMobile }) => (
           Checkbox
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink exact activeStyle={activeMenu} to="/radio">
           Radio
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/select">
           Select
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/textarea">
           Textarea
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/textfield">
           Textfield
         </NavLink>

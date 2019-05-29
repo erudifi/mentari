@@ -42,7 +42,7 @@ class AvatarPage extends Component {
               </li>
               <li>
                 <span>disabled</span>
-                <span>Apply disabled state of button for unusable and unclickable</span>
+                <span>Apply disabled state of Checkbox for unusable and unclickable</span>
               </li>
             </PropsShared>
           </Margin>

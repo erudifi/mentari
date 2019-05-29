@@ -8,6 +8,7 @@ import AvatarPage from './Avatar';
 import ButtonPage from './Button';
 import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
+import RadioPage from './Radio';
 import WelcomePage from './Welcome';
 
 const history = createBrowserHistory();
@@ -40,6 +41,7 @@ class MainPage extends Component {
               <Route exact path="/checkbox" component={CheckboxPage} />
               <Route exact path="/color" component={ColorPage} />
               <Route exact path="/button" component={ButtonPage} />
+              <Route exact path="/radio" component={RadioPage} />
               <Route exact path="/" component={WelcomePage} />
             </Switch>
           </ContentWrapper>
