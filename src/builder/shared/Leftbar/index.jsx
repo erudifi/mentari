@@ -67,13 +67,18 @@ const SidebarShared = ({ menuMobile }) => (
         </NavLink>
       </li>
       <li>
+        <NavLink exact activeStyle={activeMenu} to="/progress">
+          Progress
+        </NavLink>
+      </li>
+      <li>
         <NavLink exact activeStyle={activeMenu} to="/radio">
           Radio
         </NavLink>
       </li>
       <li>
-        <NavLink exact activeStyle={activeMenu} to="/progress">
-          Progress
+        <NavLink exact activeStyle={activeMenu} to="/textfield">
+          Textfield
         </NavLink>
       </li>
       {/* <li>

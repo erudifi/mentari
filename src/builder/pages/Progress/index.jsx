@@ -62,9 +62,6 @@ class ProgressPage extends Component {
           </CodeShared>
         </Margin>
         <RightbarShared title="Progress">
-          <Margin bottom={16}>
-            <h4>State of Progress</h4>
-          </Margin>
           <Margin top={24} bottom={8}>
             <Select
               id="percentActive"

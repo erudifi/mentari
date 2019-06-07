@@ -74,7 +74,6 @@ class AvatarPage extends Component {
               <TextField
                 autoFocus
                 id="checkboxId"
-                name="checkboxId"
                 label="Checkbox Id"
                 withRedux={false}
                 value={checkboxId}
@@ -84,7 +83,6 @@ class AvatarPage extends Component {
             <Margin bottom={24}>
               <TextField
                 id="checkboxName"
-                name="checkboxName"
                 label="Checkbox Name"
                 withRedux={false}
                 value={checkboxName}
@@ -94,7 +92,6 @@ class AvatarPage extends Component {
             <Margin bottom={24}>
               <TextField
                 id="checkboxText"
-                name="checkboxText"
                 label="Checkbox Text"
                 withRedux={false}
                 value={checkboxText}

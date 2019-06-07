@@ -10,6 +10,7 @@ import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
 import ProgressPage from './Progress';
 import RadioPage from './Radio';
+import TextfieldPage from './Textfield';
 import WelcomePage from './Welcome';
 
 const history = createBrowserHistory();
@@ -44,6 +45,7 @@ class MainPage extends Component {
               <Route exact path="/button" component={ButtonPage} />
               <Route exact path="/progress" component={ProgressPage} />
               <Route exact path="/radio" component={RadioPage} />
+              <Route exact path="/textfield" component={TextfieldPage} />
               <Route exact path="/" component={WelcomePage} />
             </Switch>
           </ContentWrapper>

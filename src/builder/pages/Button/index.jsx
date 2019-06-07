@@ -102,7 +102,6 @@ class ButtonPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="buttonText"
-              name="buttonText"
               label="Button Text"
               autoFocus
               withRedux={false}
