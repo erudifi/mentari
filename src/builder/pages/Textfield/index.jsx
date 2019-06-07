@@ -71,6 +71,10 @@ class TextfieldPage extends Component {
               <span>Automatically get focus when the page loads</span>
             </li>
             <li>
+              <span>disabled</span>
+              <span>Apply disabled state of Textfield for unusable and unclickable</span>
+            </li>
+            <li>
               <span>tooltip</span>
               <span>Additional information when user hover in area input</span>
             </li>
@@ -111,7 +115,7 @@ class TextfieldPage extends Component {
             <TextField
               autoFocus
               id="handleIdTextField"
-              label="Texfield Id"
+              label="Textfield Id"
               withRedux={false}
               value={handleIdTextField}
               onChange={e => this.setState({ handleIdTextField: e.target.value })}
@@ -120,7 +124,7 @@ class TextfieldPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handleIdTextField"
-              label="Texfield Label"
+              label="Textfield Label"
               withRedux={false}
               value={handleLabelTextField}
               onChange={e => this.setState({ handleLabelTextField: e.target.value })}
@@ -129,7 +133,7 @@ class TextfieldPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handlePlaceholderTextField"
-              label="Texfield Placeholder"
+              label="Textfield Placeholder"
               withRedux={false}
               value={handlePlaceholderTextField}
               onChange={e => this.setState({ handlePlaceholderTextField: e.target.value })}
@@ -188,7 +192,7 @@ class TextfieldPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handleTooltipDescTextField"
-              label="Texfield Tooltip"
+              label="Textfield Tooltip"
               withRedux={false}
               disabled={!handleTooltipTextField}
               value={handleTooltipDescTextField}
