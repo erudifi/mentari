@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../../index.scss';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
@@ -8,6 +8,7 @@ import AvatarPage from './Avatar';
 import ButtonPage from './Button';
 import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
+import FlashMessagePage from './FlashMessage';
 import ProgressPage from './Progress';
 import RadioPage from './Radio';
 import SelectPage from './Select';
@@ -29,7 +30,7 @@ class MainPage extends Component {
     const { menuMobile } = this.state;
     return (
       <Router history={history}>
-        <Fragment>
+        <div id="demoPage">
           <SidebarShared menuMobile={menuMobile} />
           <HeaderMenuMobile>
             <h2>Mentari</h2>
@@ -43,8 +44,9 @@ class MainPage extends Component {
             <Switch>
               <Route exact path="/avatar" component={AvatarPage} />
               <Route exact path="/checkbox" component={CheckboxPage} />
-              <Route exact path="/color" component={ColorPage} />
               <Route exact path="/button" component={ButtonPage} />
+              <Route exact path="/color" component={ColorPage} />
+              <Route exact path="/flash-message" component={FlashMessagePage} />
               <Route exact path="/progress" component={ProgressPage} />
               <Route exact path="/radio" component={RadioPage} />
               <Route exact path="/select" component={SelectPage} />
@@ -53,7 +55,7 @@ class MainPage extends Component {
               <Route exact path="/" component={WelcomePage} />
             </Switch>
           </ContentWrapper>
-        </Fragment>
+        </div>
       </Router>
     );
   }
