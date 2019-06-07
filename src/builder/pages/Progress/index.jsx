@@ -64,8 +64,6 @@ class ProgressPage extends Component {
         <RightbarShared title="Progress">
           <Margin top={24} bottom={8}>
             <Select
-              id="percentActive"
-              name="percentActive"
               label="Choose percent active"
               placeholder="Choose percent active"
               withRedux={false}
@@ -117,8 +115,6 @@ class ProgressPage extends Component {
           </Margin>
           <Margin top={24} bottom={8}>
             <Select
-              id="sizeCircle"
-              name="sizeCircle"
               label="Choose size Progress"
               placeholder="Choose size Progress"
               withRedux={false}

@@ -10,6 +10,7 @@ import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
 import ProgressPage from './Progress';
 import RadioPage from './Radio';
+import SelectPage from './Select';
 import TextAreaPage from './TextArea';
 import TextfieldPage from './Textfield';
 import WelcomePage from './Welcome';
@@ -46,6 +47,7 @@ class MainPage extends Component {
               <Route exact path="/button" component={ButtonPage} />
               <Route exact path="/progress" component={ProgressPage} />
               <Route exact path="/radio" component={RadioPage} />
+              <Route exact path="/select" component={SelectPage} />
               <Route exact path="/textarea" component={TextAreaPage} />
               <Route exact path="/textfield" component={TextfieldPage} />
               <Route exact path="/" component={WelcomePage} />

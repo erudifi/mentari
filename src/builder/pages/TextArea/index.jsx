@@ -30,7 +30,7 @@ class TextAreaPage extends Component {
       handlePlaceholderTextArea,
       handleDisableTextArea
     } = this.state;
-    const codeString = `import { TextArea } from '@danacita/mentari';\n<TextField id="${handleIdTextArea}" name="${handleNameTextArea}" label="${handleLabelTextArea}" placeholder="${handlePlaceholderTextArea}" ${
+    const codeString = `import { TextArea } from '@danacita/mentari';\n<TextArea id="${handleIdTextArea}" name="${handleNameTextArea}" label="${handleLabelTextArea}" placeholder="${handlePlaceholderTextArea}" ${
       handleDisableTextArea ? 'disabled ' : ''
     }/>`;
     return (
