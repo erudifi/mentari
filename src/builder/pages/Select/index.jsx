@@ -13,7 +13,7 @@ class SelectPage extends Component {
     super(props);
     this.state = {
       handleValueSelect: '',
-      handleLabelSelect: 'label',
+      handleLabelSelect: 'Label',
       handleDisableSelect: false
     };
   }
