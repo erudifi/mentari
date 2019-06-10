@@ -1,16 +1,22 @@
 import styled, { css } from 'styled-components';
 import { Color, MaxWidth } from '../../../lib';
 
-const ColorBox = styled.div`
+const ColorBoxWrapper = styled.div`
+  background-color: ${Color.white};
   display: inline-block;
   width: calc(100% / 3 - 24px);
   margin: 0 24px 24px 0;
-  height: 80px;
   border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid ${Color.grey216};
+  overflow: hidden;
+  box-shadow: 0 2px 4px 0 rgba(49, 81, 170, 0.09);
+`;
+
+const ColorBox = styled.div`
+  height: 80px;
+  display: block;
   color: ${Color.white};
+  border-bottom: 1px solid ${Color.grey216};
   font-weight: 800;
   text-transform: uppercase;
   ${MaxWidth.md`
@@ -58,5 +64,15 @@ const ColorBox = styled.div`
       : null};
 `;
 
-// eslint-disable-next-line import/prefer-default-export
-export { ColorBox };
+const ColorDesc = styled.div`
+  padding: 16px;
+  display: inline-block;
+`;
+
+const ColorCopyHex = styled.div`
+  float: right;
+  padding: 16px;
+  cursor: pointer;
+`;
+
+export { ColorBox, ColorBoxWrapper, ColorDesc, ColorCopyHex };

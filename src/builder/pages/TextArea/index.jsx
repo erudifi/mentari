@@ -102,7 +102,6 @@ class TextAreaPage extends Component {
           </Margin>
           <Margin bottom={24}>
             <TextField
-              autoFocus
               id="handleNameTextArea"
               label="Textarea Name"
               withRedux={false}
@@ -112,7 +111,6 @@ class TextAreaPage extends Component {
           </Margin>
           <Margin bottom={24}>
             <TextField
-              autoFocus
               id="handleLabelTextArea"
               label="Textarea Label"
               withRedux={false}
@@ -122,7 +120,6 @@ class TextAreaPage extends Component {
           </Margin>
           <Margin bottom={24}>
             <TextField
-              autoFocus
               id="handlePlaceholderTextArea"
               label="Textarea Placeholder"
               withRedux={false}
