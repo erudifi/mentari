@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Color } from '../../../lib';
 
 const PropsWrapper = styled.div`
   ul {
@@ -8,11 +7,8 @@ const PropsWrapper = styled.div`
       padding: 10px 0;
       span {
         &:first-child {
-          background-color: ${Color.lightBlue};
-          padding: 2px 4px;
-          border-radius: 4px;
-          border: 1px solid ${Color.blue};
-          margin-right: 8px;
+          margin-right: 4px;
+          font-weight: 600;
         }
       }
     }
