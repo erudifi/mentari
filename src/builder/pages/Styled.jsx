@@ -17,7 +17,7 @@ const HeaderMenuMobile = styled.div`
   display: none;
   ${MaxWidth.md`
     display: block;
-    border-bottom: 1px solid ${Color.grey216}
+    border-bottom: 1px solid ${Color.grey216};
     padding: 16px;
     text-align: center;
     position: sticky;
@@ -51,9 +51,19 @@ const TrigerMenuMobile = styled.div`
 
 const ContentWithRightBar = styled.div`
   width: calc(100% - 320px);
+  padding: 24px 112px;
   ${MaxWidth.md`
     width: 100%;
+    padding: 0;
   `}
 `;
 
-export { ContentWrapper, ContentWithRightBar, HeaderMenuMobile, TrigerMenuMobile };
+const Content = styled.div`
+  padding: 24px 112px;
+  ${MaxWidth.md`
+    width: 100%;
+    padding: 0;
+  `}
+`;
+
+export { ContentWrapper, ContentWithRightBar, HeaderMenuMobile, TrigerMenuMobile, Content };

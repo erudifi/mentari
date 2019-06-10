@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { ColorBox } from './Styled';
 import { Margin } from '../../../lib';
+import { Content } from '../Styled';
 
 const ColorPgae = () => (
-  <Fragment>
+  <Content>
     <h1>Color</h1>
     <p>
-      The Danacita brand currently consists of six primary colors
-      that are used in a wide array of marketing materials.
+      The Danacita brand currently consists of six primary colors that are used in a wide array of
+      marketing materials.
     </p>
     <Margin top={48} bottom={16}>
       <h4>Primary</h4>
@@ -18,7 +19,7 @@ const ColorPgae = () => (
     <ColorBox bgColor="green">Green - #2eb062</ColorBox>
     <ColorBox bgColor="orange">Orange - #fcac42</ColorBox>
     <ColorBox bgColor="red">Red - #c61b42</ColorBox>
-  </Fragment>
+  </Content>
 );
 
 export default ColorPgae;
