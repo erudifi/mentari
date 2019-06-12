@@ -12,29 +12,31 @@ class ButtonPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonText: 'Button',
-      buttonColor: 'defaultButtonColor',
-      buttonBlock: false,
-      buttonDisable: false,
-      buttonOutline: false,
-      buttonSize: 'defaultButtonSize'
+      handleButtonText: 'Button',
+      handleButtonColor: 'handleBefaultButtonColor',
+      handleButtonBlock: false,
+      handleButtonDisable: false,
+      handleButtonOutline: false,
+      handleButtonSize: 'defaulthandleButtonSize'
     };
   }
 
   render() {
     const {
-      buttonText,
-      buttonBlock,
-      buttonDisable,
-      buttonColor,
-      buttonOutline,
-      buttonSize
+      handleButtonText,
+      handleButtonBlock,
+      handleButtonDisable,
+      handleButtonColor,
+      handleButtonOutline,
+      handleButtonSize
     } = this.state;
     const codeString = `import { Button } from '@danacita/mentari';\n<Button${
-      buttonColor !== 'defaultButtonColor' ? ` color="${buttonColor}"` : ''
-    }${buttonSize !== 'defaultButtonSize' ? ` size="${buttonSize}"` : ''}${
-      buttonBlock ? ' block' : ''
-    }${buttonDisable ? ' disabled' : ''}${buttonOutline ? ' outline' : ''}>${buttonText}</Button>`;
+      handleButtonColor !== 'handleBefaultButtonColor' ? ` color="${handleButtonColor}"` : ''
+    }${handleButtonSize !== 'defaulthandleButtonSize' ? ` size="${handleButtonSize}"` : ''}${
+      handleButtonBlock ? ' block' : ''
+    }${handleButtonDisable ? ' disabled' : ''}${
+      handleButtonOutline ? ' outline' : ''
+    }>${handleButtonText}</Button>`;
     return (
       <ContentWithRightBar>
         <h1>Button</h1>
@@ -76,13 +78,13 @@ class ButtonPage extends Component {
           <p>You can change the props via the component builder on your right</p>
           <Margin top={16}>
             <Button
-              block={buttonBlock}
-              disabled={buttonDisable}
-              color={buttonColor}
-              outline={buttonOutline}
-              size={buttonSize}
+              block={handleButtonBlock}
+              disabled={handleButtonDisable}
+              color={handleButtonColor}
+              outline={handleButtonOutline}
+              size={handleButtonSize}
             >
-              {buttonText}
+              {handleButtonText}
             </Button>
           </Margin>
         </DemoShared>
@@ -97,12 +99,12 @@ class ButtonPage extends Component {
         <RightbarShared title="Button">
           <Margin bottom={24}>
             <TextField
-              id="buttonText"
+              id="handleButtonText"
               label="Button Text"
               autoFocus
               withRedux={false}
-              value={buttonText}
-              onChange={e => this.setState({ buttonText: e.target.value })}
+              value={handleButtonText}
+              onChange={e => this.setState({ handleButtonText: e.target.value })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -112,13 +114,13 @@ class ButtonPage extends Component {
             <Radio
               name="gender"
               fieldData={[
-                { id: 'defaultButtonColor', name: 'Default' },
+                { id: 'handleBefaultButtonColor', name: 'Default' },
                 { id: 'blue', name: 'Blue' }
               ]}
               withRedux={false}
               block
-              defaultValue={buttonColor}
-              onChange={e => this.setState({ buttonColor: e.target.id })}
+              defaultValue={handleButtonColor}
+              onChange={e => this.setState({ handleButtonColor: e.target.id })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -128,13 +130,13 @@ class ButtonPage extends Component {
             <Radio
               name="size"
               fieldData={[
-                { id: 'defaultButtonSize', name: 'Default' },
+                { id: 'defaulthandleButtonSize', name: 'Default' },
                 { id: 'small', name: 'Small' }
               ]}
               withRedux={false}
               block
-              defaultValue={buttonSize}
-              onChange={e => this.setState({ buttonSize: e.target.id })}
+              defaultValue={handleButtonSize}
+              onChange={e => this.setState({ handleButtonSize: e.target.id })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -142,33 +144,33 @@ class ButtonPage extends Component {
           </Margin>
           <Margin bottom={8}>
             <Checkbox
-              id="buttonBlock"
-              name="buttonBlock"
+              id="handleButtonBlock"
+              name="handleButtonBlock"
               label="Block"
-              checked={buttonBlock}
+              checked={handleButtonBlock}
               withRedux={false}
-              onChange={e => this.setState({ buttonBlock: e.target.checked })}
+              onChange={e => this.setState({ handleButtonBlock: e.target.checked })}
             />
           </Margin>
           <Margin bottom={8}>
             <Checkbox
-              id="buttonOutline"
-              name="buttonOutline"
+              id="handleButtonOutline"
+              name="handleButtonOutline"
               label="Outline"
-              checked={buttonOutline}
-              disabled={buttonColor === 'defaultButtonColor'}
+              checked={handleButtonOutline}
+              disabled={handleButtonColor === 'handleBefaultButtonColor'}
               withRedux={false}
-              onChange={e => this.setState({ buttonOutline: e.target.checked })}
+              onChange={e => this.setState({ handleButtonOutline: e.target.checked })}
             />
           </Margin>
           <Margin bottom={24}>
             <Checkbox
-              id="buttonDisable"
-              name="buttonDisable"
+              id="handleButtonDisable"
+              name="handleButtonDisable"
               label="Disable"
-              checked={buttonDisable}
+              checked={handleButtonDisable}
               withRedux={false}
-              onChange={e => this.setState({ buttonDisable: e.target.checked })}
+              onChange={e => this.setState({ handleButtonDisable: e.target.checked })}
             />
           </Margin>
         </RightbarShared>

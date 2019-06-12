@@ -1,8 +1,10 @@
+/* eslint-disable no-lone-blocks */
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-did-update-set-state */
 /* eslint-disable no-plusplus */
 /* eslint-disable class-methods-use-this */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import 'moment/locale/id';
 import 'moment/locale/tl-ph';
@@ -19,15 +21,16 @@ const propTypes = {
   language: PropTypes.string,
   disabled: PropTypes.bool,
   yearMaxOption: PropTypes.number,
+  withRedux: PropTypes.bool,
   // input prop is passed by redux-form to keep field in sync with state
   input: PropTypes.shape({
     value: PropTypes.string,
     onChange: PropTypes.func
-  }).isRequired,
+  }),
   meta: PropTypes.shape({
     error: PropTypes.string,
     touched: PropTypes.bool
-  }).isRequired
+  })
 };
 
 const defaultProps = {
@@ -37,6 +40,9 @@ const defaultProps = {
   defaultPickerValue: '',
   disabled: false,
   yearMaxOption: 0,
+  withRedux: true,
+  input: {},
+  meta: {},
   language: ''
 };
 
@@ -69,17 +75,21 @@ class DatePickerSelect extends Component {
 
   handleChangeDate(e) {
     const { selectDate, selectMonth, selectYear } = this.state;
-    const { input, defaultPickerValue } = this.props;
+    const { input, defaultPickerValue, withRedux } = this.props;
     this.setState(
       {
         [e.target.name]: e.target.value
       },
       () => {
-        input.onChange(
-          `${selectYear || moment(defaultPickerValue).format('YYYY')}-${selectMonth ||
-            moment(defaultPickerValue).format('MM')}-${selectDate ||
-            moment(defaultPickerValue).format('DD')}`
-        );
+        {
+          withRedux
+            ? input.onChange(
+                `${selectYear || moment(defaultPickerValue).format('YYYY')}-${selectMonth ||
+                  moment(defaultPickerValue).format('MM')}-${selectDate ||
+                  moment(defaultPickerValue).format('DD')}`
+              )
+            : '';
+        }
       }
     );
   }
@@ -146,60 +156,114 @@ class DatePickerSelect extends Component {
       yearMaxOption,
       disabled,
       language,
+      withRedux,
       meta: { error, touched }
     } = this.props;
 
     const placeholder = this.renderPlaceholder(language);
     return (
-      <SelectWrapper touched={touched} error={error} testid={testid} disabled={disabled}>
-        <input
-          type="hidden"
-          id={id}
-          name={input.name}
-          value={valueHidden || input.value ? input.value : defaultPickerValue}
-          onChange={() => {}}
-          onBlur={input.onBlur}
-        />
-        <p>{label}</p>
-        <select
-          name="selectDate"
-          value={disabled ? selectDate : selectDate || moment(defaultPickerValue).format('DD')}
-          onChange={this.handleChangeDate}
-          onBlur={this.handleChangeDate}
-          className="dc-date"
-          disabled={disabled}
-        >
-          <option value="">{placeholder[0]}</option>
-          {this.renderDateOption(31)}
-        </select>
-        <select
-          name="selectMonth"
-          value={disabled ? selectMonth : selectMonth || moment(defaultPickerValue).format('MM')}
-          onChange={this.handleChangeDate}
-          onBlur={this.handleChangeDate}
-          className="dc-month"
-          disabled={disabled}
-        >
-          <option value="">{placeholder[1]}</option>
-          {this.renderMonthOption(12)}
-        </select>
-        <select
-          name="selectYear"
-          value={disabled ? selectYear : selectYear || moment(defaultPickerValue).format('YYYY')}
-          onChange={this.handleChangeDate}
-          onBlur={this.handleChangeDate}
-          className="dc-year"
-          disabled={disabled}
-        >
-          <option value="">{placeholder[2]}</option>
-          {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
-        </select>
-        {touched && error && (
-          <Margin top={8}>
-            <span style={{ color: Color.red }}>{error}</span>
-          </Margin>
+      <Fragment>
+        {withRedux ? (
+          <SelectWrapper error={error} testid={testid} disabled={disabled}>
+            <input
+              type="hidden"
+              id={id}
+              name={input.name}
+              value={valueHidden || input.value ? input.value : defaultPickerValue}
+              onChange={() => {}}
+              onBlur={input.onBlur}
+            />
+            <p className="label-select">{label}</p>
+            <select
+              name="selectDate"
+              value={disabled ? selectDate : selectDate || moment(defaultPickerValue).format('DD')}
+              onChange={this.handleChangeDate}
+              onBlur={this.handleChangeDate}
+              className="dc-date"
+              disabled={disabled}
+            >
+              <option value="">{placeholder[0]}</option>
+              {this.renderDateOption(31)}
+            </select>
+            <select
+              name="selectMonth"
+              value={
+                disabled ? selectMonth : selectMonth || moment(defaultPickerValue).format('MM')
+              }
+              onChange={this.handleChangeDate}
+              onBlur={this.handleChangeDate}
+              className="dc-month"
+              disabled={disabled}
+            >
+              <option value="">{placeholder[1]}</option>
+              {this.renderMonthOption(12)}
+            </select>
+            <select
+              name="selectYear"
+              value={
+                disabled ? selectYear : selectYear || moment(defaultPickerValue).format('YYYY')
+              }
+              onChange={this.handleChangeDate}
+              onBlur={this.handleChangeDate}
+              className="dc-year"
+              disabled={disabled}
+            >
+              <option value="">{placeholder[2]}</option>
+              {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
+            </select>
+            {touched && error && (
+              <Margin top={8}>
+                <span style={{ color: Color.red }}>{error}</span>
+              </Margin>
+            )}
+          </SelectWrapper>
+        ) : (
+          <SelectWrapper testid={testid} disabled={disabled}>
+            <input
+              type="hidden"
+              id={id}
+              name={input.name}
+              value={valueHidden ? '' : defaultPickerValue}
+              onChange={() => {}}
+            />
+            <p className="label-select">{label}</p>
+            <select
+              name="selectDate"
+              value={disabled ? selectDate : selectDate || moment(defaultPickerValue).format('DD')}
+              onChange={this.handleChangeDate}
+              className="dc-date"
+              disabled={disabled}
+            >
+              <option value="">{placeholder[0]}</option>
+              {this.renderDateOption(31)}
+            </select>
+            <select
+              name="selectMonth"
+              value={
+                disabled ? selectMonth : selectMonth || moment(defaultPickerValue).format('MM')
+              }
+              onChange={this.handleChangeDate}
+              className="dc-month"
+              disabled={disabled}
+            >
+              <option value="">{placeholder[1]}</option>
+              {this.renderMonthOption(12)}
+            </select>
+            <select
+              name="selectYear"
+              value={
+                disabled ? selectYear : selectYear || moment(defaultPickerValue).format('YYYY')
+              }
+              onChange={this.handleChangeDate}
+              className="dc-year"
+              disabled={disabled}
+            >
+              <option value="">{placeholder[2]}</option>
+              {this.renderYearOption(new Date().getFullYear() + yearMaxOption, 1949)}
+            </select>
+          </SelectWrapper>
         )}
-      </SelectWrapper>
+      </Fragment>
     );
   }
 }

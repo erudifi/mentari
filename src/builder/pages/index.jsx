@@ -9,6 +9,7 @@ import ButtonPage from './Button';
 import ButtonLikPage from './ButtonLink';
 import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
+import DatePickerSelectPage from './DatePicker';
 import FlashMessagePage from './FlashMessage';
 import GridPages from './Grid';
 import ProgressPage from './Progress';
@@ -49,6 +50,7 @@ class MainPage extends Component {
               <Route exact path="/button" component={ButtonPage} />
               <Route exact path="/button-link" component={ButtonLikPage} />
               <Route exact path="/color" component={ColorPage} />
+              <Route exact path="/date-picker-select" component={DatePickerSelectPage} />
               <Route exact path="/flash-message" component={FlashMessagePage} />
               <Route exact path="/grid" component={GridPages} />
               <Route exact path="/progress" component={ProgressPage} />

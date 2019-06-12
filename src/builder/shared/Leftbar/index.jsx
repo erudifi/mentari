@@ -46,11 +46,6 @@ const SidebarShared = ({ menuMobile }) => (
     <Margin vertical={20} />
     <h3>Components</h3>
     <ul>
-      {/* <li>
-        <NavLink exact activeStyle={activeMenu} to="/accordion">
-          Accordion
-        </NavLink>
-      </li> */}
       <li>
         <NavLink exact activeStyle={activeMenu} to="/avatar">
           Avatar
@@ -69,6 +64,11 @@ const SidebarShared = ({ menuMobile }) => (
       <li>
         <NavLink exact activeStyle={activeMenu} to="/checkbox">
           Checkbox
+        </NavLink>
+      </li>
+      <li>
+        <NavLink exact activeStyle={activeMenu} to="/date-picker-select">
+          Datepicker select
         </NavLink>
       </li>
       <li>
