@@ -6,6 +6,7 @@ import SidebarShared from '../shared/Leftbar';
 import { ContentWrapper, HeaderMenuMobile, TrigerMenuMobile } from './Styled';
 import AvatarPage from './Avatar';
 import ButtonPage from './Button';
+import ButtonLikPage from './ButtonLink';
 import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
 import FlashMessagePage from './FlashMessage';
@@ -46,6 +47,7 @@ class MainPage extends Component {
               <Route exact path="/avatar" component={AvatarPage} />
               <Route exact path="/checkbox" component={CheckboxPage} />
               <Route exact path="/button" component={ButtonPage} />
+              <Route exact path="/button-link" component={ButtonLikPage} />
               <Route exact path="/color" component={ColorPage} />
               <Route exact path="/flash-message" component={FlashMessagePage} />
               <Route exact path="/grid" component={GridPages} />

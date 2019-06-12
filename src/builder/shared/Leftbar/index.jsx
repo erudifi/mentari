@@ -32,11 +32,11 @@ const SidebarShared = ({ menuMobile }) => (
           Color
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink exact activeStyle={activeMenu} to="/grid">
           Grid
         </NavLink>
-      </li> */}
+      </li>
       {/* <li>
         <NavLink exact activeStyle={activeMenu} to="/typography">
           Typography
@@ -62,18 +62,18 @@ const SidebarShared = ({ menuMobile }) => (
         </NavLink>
       </li>
       <li>
+        <NavLink exact activeStyle={activeMenu} to="/button-link">
+          Button link
+        </NavLink>
+      </li>
+      <li>
         <NavLink exact activeStyle={activeMenu} to="/checkbox">
           Checkbox
         </NavLink>
       </li>
       <li>
         <NavLink exact activeStyle={activeMenu} to="/flash-message">
-          Flash Message
-        </NavLink>
-      </li>
-      <li>
-        <NavLink exact activeStyle={activeMenu} to="/grid">
-          Grid
+          Flash message
         </NavLink>
       </li>
       <li>

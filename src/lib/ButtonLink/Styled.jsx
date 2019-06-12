@@ -11,6 +11,7 @@ const ButtonLink = styled.a`
   padding: 8px 16px;
   border-radius: 4px;
   font-weight: 600;
+  font-size: 16px;
   background-color: ${Color.white};
   color: ${Color.grey111};
   border: 1px solid ${Color.grey191};
@@ -27,7 +28,7 @@ const ButtonLink = styled.a`
         `
       : null};
   ${props =>
-    props.colorType
+    props.colorType === 'blue'
       ? css`
           background-color: ${Color.blue};
           color: ${Color.white} !important;
@@ -41,7 +42,7 @@ const ButtonLink = styled.a`
         `
       : null};
   ${props =>
-    props.colorType && props.outline
+    props.colorType === 'blue' && props.outline
       ? css`
           background-color: ${Color.white};
           border: 1px solid ${Color.blue};
@@ -59,7 +60,7 @@ const ButtonLink = styled.a`
       ? css`
           background-color: ${Color.grey239};
           border: 1px solid ${Color.grey216};
-          color: ${Color.grey191};
+          color: ${Color.grey191} !important;
           cursor: not-allowed;
           &:hover,
           &:focus,

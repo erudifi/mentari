@@ -50,10 +50,6 @@ class ButtonPage extends Component {
               <span>Set children for text of Button</span>
             </li>
             <li>
-              <span>type</span>
-              <span>The type attribute specifies the type</span>
-            </li>
-            <li>
               <span>color</span>
               <span>Set the color of Button</span>
             </li>
