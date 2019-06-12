@@ -23,7 +23,7 @@ class FlushMessagePage extends Component {
     const codeString = `import { FlashMessage } from '@danacita/mentari';\nFlashMessage("${handleTypeFlashMessage}", "${handleContentFlashMessage}")`;
     return (
       <ContentWithRightBar>
-        <h1>Radio</h1>
+        <h1>Flash message</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         <Margin top={24}>
           <PropsShared>

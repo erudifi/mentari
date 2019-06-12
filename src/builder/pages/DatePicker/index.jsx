@@ -12,30 +12,40 @@ class DatePickerSelectPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handleIdDatePickerSelect: 'Id',
-      handleLabelDatePickerSelect: 'Label',
-      handleDisableDatePickerSelect: false
+      handleDatePickerSelectId: 'Id',
+      handleDatePickerSelectLabel: 'Label',
+      handleDatePickerSelectDisable: false
     };
   }
 
   render() {
     const {
-      handleIdDatePickerSelect,
-      handleLabelDatePickerSelect,
-      handleDisableDatePickerSelect
+      handleDatePickerSelectId,
+      handleDatePickerSelectLabel,
+      handleDatePickerSelectDisable
     } = this.state;
-    const codeString = `import { DatePickerSelect } from '@danacita/mentari';\n<DatePickerSelect id="${handleIdDatePickerSelect}" ${
-      handleLabelDatePickerSelect ? `label="${handleLabelDatePickerSelect}"` : ''
-    } ${handleDisableDatePickerSelect ? 'disabled ' : ''}/>`;
+    const codeString = `import { DatePickerSelect } from '@danacita/mentari';\n<DatePickerSelect${
+      handleDatePickerSelectId ? ` id="${handleDatePickerSelectId}"` : ''
+    } ${handleDatePickerSelectLabel ? `label="${handleDatePickerSelectLabel}"` : ''} ${
+      handleDatePickerSelectDisable ? 'disabled ' : ''
+    }/>`;
     return (
       <ContentWithRightBar>
         <h1>Datepicker select</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         <Margin top={24}>
-          <PropsShared>
+          <PropsShared empty>
             <li>
               <span>id</span>
               <span>Apply a id to the control element</span>
+            </li>
+            <li>
+              <span>label</span>
+              <span>Defines label name Datepicker</span>
+            </li>
+            <li>
+              <span>disabled</span>
+              <span>Apply disabled state of Datepicker select for unusable and unclickable</span>
             </li>
           </PropsShared>
         </Margin>
@@ -46,9 +56,9 @@ class DatePickerSelectPage extends Component {
             <Row>
               <Col lg={8}>
                 <DatePickerSelect
-                  id={handleIdDatePickerSelect}
-                  label={handleLabelDatePickerSelect}
-                  disabled={handleDisableDatePickerSelect}
+                  id={handleDatePickerSelectId}
+                  label={handleDatePickerSelectLabel}
+                  disabled={handleDatePickerSelectDisable}
                   withRedux={false}
                 />
               </Col>
@@ -67,21 +77,21 @@ class DatePickerSelectPage extends Component {
           <Margin bottom={24}>
             <TextField
               autoFocus
-              id="handleIdDatePickerSelect"
+              id="handleDatePickerSelectId"
               label="Datepicker select id"
               withRedux={false}
-              value={handleIdDatePickerSelect}
-              onChange={e => this.setState({ handleIdDatePickerSelect: e.target.value })}
+              value={handleDatePickerSelectId}
+              onChange={e => this.setState({ handleDatePickerSelectId: e.target.value })}
             />
           </Margin>
           <Margin bottom={24}>
             <TextField
               autoFocus
-              id="handleLabelDatePickerSelect"
+              id="handleDatePickerSelectLabel"
               label="Datepicker select label"
               withRedux={false}
-              value={handleLabelDatePickerSelect}
-              onChange={e => this.setState({ handleLabelDatePickerSelect: e.target.value })}
+              value={handleDatePickerSelectLabel}
+              onChange={e => this.setState({ handleDatePickerSelectLabel: e.target.value })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -92,9 +102,9 @@ class DatePickerSelectPage extends Component {
               id="buttonDisable"
               name="buttonDisable"
               label="Disable"
-              checked={handleDisableDatePickerSelect}
+              checked={handleDatePickerSelectDisable}
               withRedux={false}
-              onChange={e => this.setState({ handleDisableDatePickerSelect: e.target.checked })}
+              onChange={e => this.setState({ handleDatePickerSelectDisable: e.target.checked })}
             />
           </Margin>
         </RightbarShared>

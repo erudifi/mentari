@@ -96,7 +96,7 @@ class SelectPage extends Component {
             <TextField
               autoFocus
               id="handleLabelSelect"
-              label="Select Label"
+              label="Select label"
               withRedux={false}
               value={handleLabelSelect}
               onChange={e => this.setState({ handleLabelSelect: e.target.value })}

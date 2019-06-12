@@ -94,7 +94,7 @@ class TextAreaPage extends Component {
             <TextField
               autoFocus
               id="handleIdTextArea"
-              label="Textarea Id"
+              label="Textarea id"
               withRedux={false}
               value={handleIdTextArea}
               onChange={e => this.setState({ handleIdTextArea: e.target.value })}
@@ -103,7 +103,7 @@ class TextAreaPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handleNameTextArea"
-              label="Textarea Name"
+              label="Textarea name"
               withRedux={false}
               value={handleNameTextArea}
               onChange={e => this.setState({ handleNameTextArea: e.target.value })}
@@ -112,7 +112,7 @@ class TextAreaPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handleLabelTextArea"
-              label="Textarea Label"
+              label="Textarea label"
               withRedux={false}
               value={handleLabelTextArea}
               onChange={e => this.setState({ handleLabelTextArea: e.target.value })}
@@ -121,7 +121,7 @@ class TextAreaPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handlePlaceholderTextArea"
-              label="Textarea Placeholder"
+              label="Textarea placeholder"
               withRedux={false}
               value={handlePlaceholderTextArea}
               onChange={e => this.setState({ handlePlaceholderTextArea: e.target.value })}

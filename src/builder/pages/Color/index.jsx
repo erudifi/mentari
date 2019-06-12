@@ -18,12 +18,12 @@ class ColorPgae extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      colorDictionaryState: colorDictionary
+      handleColorDictionaryState: colorDictionary
     };
   }
 
   render() {
-    const { colorDictionaryState } = this.state;
+    const { handleColorDictionaryState } = this.state;
     return (
       <Content>
         <h1>Color</h1>
@@ -34,7 +34,7 @@ class ColorPgae extends Component {
         <Margin top={48} bottom={16}>
           <h4>Primary</h4>
         </Margin>
-        {colorDictionaryState.map(color => (
+        {handleColorDictionaryState.map(color => (
           <ColorBoxWrapper key={color.id}>
             <CopyToClipboard>
               <Fragment>
@@ -50,9 +50,9 @@ class ColorPgae extends Component {
                         }
                         return someColor;
                       });
-                      this.setState({ colorDictionaryState: allColors }, () =>
+                      this.setState({ handleColorDictionaryState: allColors }, () =>
                         setTimeout(
-                          () => this.setState({ colorDictionaryState: colorDictionary }),
+                          () => this.setState({ handleColorDictionaryState: colorDictionary }),
                           1000
                         )
                       );

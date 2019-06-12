@@ -14,7 +14,7 @@ class GridPages extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handleColumn: { id: '1', name: '1' }
+      handleGridColumn: { id: '1', name: '1' }
     };
   }
 
@@ -29,18 +29,18 @@ class GridPages extends Component {
     return result;
   }
 
-  handleRenderCol(handleColumn) {
-    switch (handleColumn) {
+  handleRenderCol(handleGridColumn) {
+    switch (handleGridColumn) {
       case '2':
-        return <Row>{this.handleLoop(handleColumn, 6)}</Row>;
+        return <Row>{this.handleLoop(handleGridColumn, 6)}</Row>;
       case '3':
-        return <Row>{this.handleLoop(handleColumn, 4)}</Row>;
+        return <Row>{this.handleLoop(handleGridColumn, 4)}</Row>;
       case '4':
-        return <Row>{this.handleLoop(handleColumn, 3)}</Row>;
+        return <Row>{this.handleLoop(handleGridColumn, 3)}</Row>;
       case '6':
-        return <Row>{this.handleLoop(handleColumn, 2)}</Row>;
+        return <Row>{this.handleLoop(handleGridColumn, 2)}</Row>;
       case '12':
-        return <Row>{this.handleLoop(handleColumn, 1)}</Row>;
+        return <Row>{this.handleLoop(handleGridColumn, 1)}</Row>;
       default:
         return (
           <Row>
@@ -52,8 +52,8 @@ class GridPages extends Component {
     }
   }
 
-  handleShowCode(handleColumn) {
-    switch (handleColumn) {
+  handleShowCode(handleGridColumn) {
+    switch (handleGridColumn) {
       case '2':
         return ` <Col lg={6}>Lorem ipsum dolor.</Col> \n  <Col lg={6}>Lorem ipsum dolor.</Col>`;
       case '3':
@@ -70,9 +70,9 @@ class GridPages extends Component {
   }
 
   render() {
-    const { handleColumn } = this.state;
+    const { handleGridColumn } = this.state;
     const codeString = `import { Row, Col } from '@danacita/mentari';\n<Row>\n ${this.handleShowCode(
-      handleColumn.id
+      handleGridColumn.id
     )}\n</Row>`;
     return (
       <ContentWithRightBar>
@@ -115,7 +115,7 @@ class GridPages extends Component {
         <DemoShared>
           <h4>Demo</h4>
           <p>You can change the props via the component builder on your right</p>
-          <Margin top={16}>{this.handleRenderCol(handleColumn.id)}</Margin>
+          <Margin top={16}>{this.handleRenderCol(handleGridColumn.id)}</Margin>
         </DemoShared>
         <h4>Code</h4>
         <Margin top={16}>
@@ -157,8 +157,8 @@ class GridPages extends Component {
                   name: '12'
                 }
               ]}
-              valueSelect={handleColumn}
-              onChange={value => this.setState({ handleColumn: value })}
+              valueSelect={handleGridColumn}
+              onChange={value => this.setState({ handleGridColumn: value })}
             />
           </Margin>
         </RightbarShared>

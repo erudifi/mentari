@@ -12,35 +12,39 @@ class ButtonLikPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonLinkText: 'Button link',
-      buttonLinkHref: 'https://danacita.co.id/',
-      buttonLinkColor: 'defaultButtonColor',
-      buttonLinkTargetBlank: true,
-      buttonLinkBlock: false,
-      buttonLinkDisable: false,
-      buttonLinkOutline: false,
-      buttonLinkSize: 'defaultButtonSize'
+      handleButtonLinkId: 'Id',
+      handleButtonLinkText: 'Button link',
+      handleButtonLinkHref: 'https://danacita.co.id/',
+      handleButtonLinkColor: 'defaultButtonColor',
+      handleButtonLinkTargetBlank: true,
+      handleButtonLinkBlock: false,
+      handleButtonLinkDisable: false,
+      handleButtonLinkOutline: false,
+      handleButtonLinkSize: 'defaultButtonSize'
     };
   }
 
   render() {
     const {
-      buttonLinkText,
-      buttonLinkHref,
-      buttonLinkTargetBlank,
-      buttonLinkColor,
-      buttonLinkBlock,
-      buttonLinkDisable,
-      buttonLinkOutline,
-      buttonLinkSize
+      handleButtonLinkId,
+      handleButtonLinkText,
+      handleButtonLinkHref,
+      handleButtonLinkTargetBlank,
+      handleButtonLinkColor,
+      handleButtonLinkBlock,
+      handleButtonLinkDisable,
+      handleButtonLinkOutline,
+      handleButtonLinkSize
     } = this.state;
-    const codeString = `import { ButtonLink } from '@danacita/mentari';\n<ButtonLink href="${buttonLinkHref}"${
-      buttonLinkTargetBlank ? ' target="_blank"' : ''
-    }${buttonLinkColor !== 'defaultButtonColor' ? ` color="${buttonLinkColor}"` : ''}${
-      buttonLinkSize !== 'defaultButtonSize' ? ` size="${buttonLinkSize}"` : ''
-    }${buttonLinkBlock ? ' block' : ''}${buttonLinkDisable ? ' disabled' : ''}${
-      buttonLinkOutline ? ' outline' : ''
-    }>${buttonLinkText}</ButtonLink>`;
+    const codeString = `import { ButtonLink } from '@danacita/mentari';\n<ButtonLink${
+      handleButtonLinkId ? ` id=${handleButtonLinkId}` : ''
+    } href="${handleButtonLinkHref}"${handleButtonLinkTargetBlank ? ' target="_blank"' : ''}${
+      handleButtonLinkColor !== 'defaultButtonColor' ? ` color="${handleButtonLinkColor}"` : ''
+    }${handleButtonLinkSize !== 'defaultButtonSize' ? ` size="${handleButtonLinkSize}"` : ''}${
+      handleButtonLinkBlock ? ' block' : ''
+    }${handleButtonLinkDisable ? ' disabled' : ''}${
+      handleButtonLinkOutline ? ' outline' : ''
+    }>${handleButtonLinkText}</ButtonLink>`;
     return (
       <ContentWithRightBar>
         <h1>Button link</h1>
@@ -94,15 +98,15 @@ class ButtonLikPage extends Component {
           <p>You can change the props via the component builder on your right</p>
           <Margin top={16}>
             <ButtonLink
-              block={buttonLinkBlock}
-              disabled={buttonLinkDisable}
-              color={buttonLinkColor}
-              outline={buttonLinkOutline}
-              size={buttonLinkSize}
-              href={buttonLinkHref}
-              target={buttonLinkTargetBlank ? '_blank' : null}
+              block={handleButtonLinkBlock}
+              disabled={handleButtonLinkDisable}
+              color={handleButtonLinkColor}
+              outline={handleButtonLinkOutline}
+              size={handleButtonLinkSize}
+              href={handleButtonLinkHref}
+              target={handleButtonLinkTargetBlank ? '_blank' : null}
             >
-              {buttonLinkText}
+              {handleButtonLinkText}
             </ButtonLink>
           </Margin>
         </DemoShared>
@@ -117,21 +121,31 @@ class ButtonLikPage extends Component {
         <RightbarShared title="Button link">
           <Margin bottom={24}>
             <TextField
-              id="buttonLinkText"
-              label="Button link Text"
+              id="handleButtonLinkId"
+              label="Button link id"
               autoFocus
               withRedux={false}
-              value={buttonLinkText}
-              onChange={e => this.setState({ buttonLinkText: e.target.value })}
+              value={handleButtonLinkId}
+              onChange={e => this.setState({ handleButtonLinkId: e.target.value })}
             />
           </Margin>
           <Margin bottom={24}>
             <TextField
-              id="buttonLinkHref"
-              label="Button link Href"
+              id="handleButtonLinkText"
+              label="Button link text"
+              autoFocus
               withRedux={false}
-              value={buttonLinkHref}
-              onChange={e => this.setState({ buttonLinkHref: e.target.value })}
+              value={handleButtonLinkText}
+              onChange={e => this.setState({ handleButtonLinkText: e.target.value })}
+            />
+          </Margin>
+          <Margin bottom={24}>
+            <TextField
+              id="handleButtonLinkHref"
+              label="Button link href"
+              withRedux={false}
+              value={handleButtonLinkHref}
+              onChange={e => this.setState({ handleButtonLinkHref: e.target.value })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -146,8 +160,8 @@ class ButtonLikPage extends Component {
               ]}
               withRedux={false}
               block
-              defaultValue={buttonLinkColor}
-              onChange={e => this.setState({ buttonLinkColor: e.target.id })}
+              defaultValue={handleButtonLinkColor}
+              onChange={e => this.setState({ handleButtonLinkColor: e.target.id })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -162,8 +176,8 @@ class ButtonLikPage extends Component {
               ]}
               withRedux={false}
               block
-              defaultValue={buttonLinkSize}
-              onChange={e => this.setState({ buttonLinkSize: e.target.id })}
+              defaultValue={handleButtonLinkSize}
+              onChange={e => this.setState({ handleButtonLinkSize: e.target.id })}
             />
           </Margin>
           <Margin bottom={16}>
@@ -171,43 +185,43 @@ class ButtonLikPage extends Component {
           </Margin>
           <Margin bottom={8}>
             <Checkbox
-              id="buttonLinkBlock"
-              name="buttonLinkBlock"
+              id="handleButtonLinkBlock"
+              name="handleButtonLinkBlock"
               label="Block"
-              checked={buttonLinkBlock}
+              checked={handleButtonLinkBlock}
               withRedux={false}
-              onChange={e => this.setState({ buttonLinkBlock: e.target.checked })}
+              onChange={e => this.setState({ handleButtonLinkBlock: e.target.checked })}
             />
           </Margin>
           <Margin bottom={8}>
             <Checkbox
-              id="buttonLinkOutline"
-              name="buttonLinkOutline"
+              id="handleButtonLinkOutline"
+              name="handleButtonLinkOutline"
               label="Outline"
-              checked={buttonLinkOutline}
-              disabled={buttonLinkColor === 'defaultButtonColor'}
+              checked={handleButtonLinkOutline}
+              disabled={handleButtonLinkColor === 'defaultButtonColor'}
               withRedux={false}
-              onChange={e => this.setState({ buttonLinkOutline: e.target.checked })}
+              onChange={e => this.setState({ handleButtonLinkOutline: e.target.checked })}
             />
           </Margin>
           <Margin bottom={8}>
             <Checkbox
-              id="buttonLinkDisable"
-              name="buttonLinkDisable"
+              id="handleButtonLinkDisable"
+              name="handleButtonLinkDisable"
               label="Disable"
-              checked={buttonLinkDisable}
+              checked={handleButtonLinkDisable}
               withRedux={false}
-              onChange={e => this.setState({ buttonLinkDisable: e.target.checked })}
+              onChange={e => this.setState({ handleButtonLinkDisable: e.target.checked })}
             />
           </Margin>
           <Margin bottom={24}>
             <Checkbox
-              id="buttonLinkTargetBlank"
-              name="buttonLinkTargetBlank"
+              id="handleButtonLinkTargetBlank"
+              name="handleButtonLinkTargetBlank"
               label="New tab"
-              checked={buttonLinkTargetBlank}
+              checked={handleButtonLinkTargetBlank}
               withRedux={false}
-              onChange={e => this.setState({ buttonLinkTargetBlank: e.target.checked })}
+              onChange={e => this.setState({ handleButtonLinkTargetBlank: e.target.checked })}
             />
           </Margin>
         </RightbarShared>

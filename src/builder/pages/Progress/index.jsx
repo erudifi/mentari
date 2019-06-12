@@ -12,16 +12,16 @@ class ProgressPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handleSelectValue: { id: '30', name: '30' },
-      handleSizeProgress: { id: '50', name: '50' }
+      handleProgressSelectValue: { id: '30', name: '30' },
+      handleProgressSize: { id: '50', name: '50' }
     };
   }
 
   render() {
-    const { handleSelectValue, handleSizeProgress } = this.state;
+    const { handleProgressSelectValue, handleProgressSize } = this.state;
     const codeString = `import { Progress } from '@danacita/mentari';\n<Progress text={${
-      handleSelectValue.id
-    }} percent={${handleSelectValue.id}} size={${handleSizeProgress.id}}/>`;
+      handleProgressSelectValue.id
+    }} percent={${handleProgressSelectValue.id}} size={${handleProgressSize.id}} />`;
     return (
       <ContentWithRightBar>
         <h1>Progress</h1>
@@ -47,9 +47,9 @@ class ProgressPage extends Component {
           <p>You can change the props via the component builder on your right</p>
           <Margin top={16}>
             <Progress
-              text={handleSelectValue.id ? Number(handleSelectValue.id) : 0}
-              percent={handleSelectValue.id ? Number(handleSelectValue.id) : 0}
-              size={handleSizeProgress.id ? Number(handleSizeProgress.id) : 50}
+              text={handleProgressSelectValue.id ? Number(handleProgressSelectValue.id) : 0}
+              percent={handleProgressSelectValue.id ? Number(handleProgressSelectValue.id) : 0}
+              size={handleProgressSize.id ? Number(handleProgressSize.id) : 50}
             />
           </Margin>
         </DemoShared>
@@ -109,14 +109,14 @@ class ProgressPage extends Component {
                   name: '100'
                 }
               ]}
-              valueSelect={handleSelectValue}
-              onChange={value => this.setState({ handleSelectValue: value })}
+              valueSelect={handleProgressSelectValue}
+              onChange={value => this.setState({ handleProgressSelectValue: value })}
             />
           </Margin>
           <Margin top={24} bottom={8}>
             <Select
-              label="Choose size Progress"
-              placeholder="Choose size Progress"
+              label="Choose size progress"
+              placeholder="Choose size progress"
               withRedux={false}
               fieldData={[
                 {
@@ -144,8 +144,8 @@ class ProgressPage extends Component {
                   name: '100'
                 }
               ]}
-              valueSelect={handleSizeProgress}
-              onChange={value => this.setState({ handleSizeProgress: value })}
+              valueSelect={handleProgressSize}
+              onChange={value => this.setState({ handleProgressSize: value })}
             />
           </Margin>
         </RightbarShared>

@@ -12,17 +12,17 @@ class RadioPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      radioDefault: 'one',
-      radioBlock: false,
-      radioSlide: false
+      handleRadioDefault: 'one',
+      handleRadioBlock: false,
+      handleRadioSlide: false
     };
   }
 
   render() {
-    const { radioDefault, radioBlock, radioSlide } = this.state;
+    const { handleRadioDefault, handleRadioBlock, handleRadioSlide } = this.state;
     const codeString = `import { Radio } from '@danacita/mentari';\n<Radio fieldData={[{ id: 'one', name: 'Option one' }, { id: 'two', name: 'Option two' }, { id: 'three', name: 'Option three' }, { id: 'four', name: 'Option four' }]} ${
-      radioBlock ? 'block ' : ''
-    }${radioSlide ? 'slideOption' : ''}/>`;
+      handleRadioBlock ? 'block ' : ''
+    }${handleRadioSlide ? 'slideOption' : ''}/>`;
     return (
       <Fragment>
         <ContentWithRightBar>
@@ -66,10 +66,10 @@ class RadioPage extends Component {
                   { id: 'four', name: 'Option four' }
                 ]}
                 withRedux={false}
-                defaultValue={radioDefault}
-                onChange={e => this.setState({ radioDefault: e.target.id })}
-                block={radioBlock}
-                slideOption={radioSlide}
+                defaultValue={handleRadioDefault}
+                onChange={e => this.setState({ handleRadioDefault: e.target.id })}
+                block={handleRadioBlock}
+                slideOption={handleRadioSlide}
               />
             </Margin>
           </DemoShared>
@@ -87,22 +87,22 @@ class RadioPage extends Component {
             </Margin>
             <Margin bottom={8}>
               <Checkbox
-                id="radioBlock"
-                name="radioBlock"
+                id="handleRadioBlock"
+                name="handleRadioBlock"
                 label="Block"
-                checked={radioBlock}
+                checked={handleRadioBlock}
                 withRedux={false}
-                onChange={e => this.setState({ radioBlock: e.target.checked })}
+                onChange={e => this.setState({ handleRadioBlock: e.target.checked })}
               />
             </Margin>
             <Margin bottom={24}>
               <Checkbox
-                id="radioSlide"
-                name="radioSlide"
+                id="handleRadioSlide"
+                name="handleRadioSlide"
                 label="Slide"
-                checked={radioSlide}
+                checked={handleRadioSlide}
                 withRedux={false}
-                onChange={e => this.setState({ radioSlide: e.target.checked })}
+                onChange={e => this.setState({ handleRadioSlide: e.target.checked })}
               />
             </Margin>
           </RightbarShared>

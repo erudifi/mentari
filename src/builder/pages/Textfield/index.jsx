@@ -115,7 +115,7 @@ class TextfieldPage extends Component {
             <TextField
               autoFocus
               id="handleIdTextField"
-              label="Textfield Id"
+              label="Textfield id"
               withRedux={false}
               value={handleIdTextField}
               onChange={e => this.setState({ handleIdTextField: e.target.value })}
@@ -124,7 +124,7 @@ class TextfieldPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handleIdTextField"
-              label="Textfield Label"
+              label="Textfield label"
               withRedux={false}
               value={handleLabelTextField}
               onChange={e => this.setState({ handleLabelTextField: e.target.value })}
@@ -133,7 +133,7 @@ class TextfieldPage extends Component {
           <Margin bottom={24}>
             <TextField
               id="handlePlaceholderTextField"
-              label="Textfield Placeholder"
+              label="Textfield placeholder"
               withRedux={false}
               value={handlePlaceholderTextField}
               onChange={e => this.setState({ handlePlaceholderTextField: e.target.value })}

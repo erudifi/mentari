@@ -12,6 +12,7 @@ class ButtonPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      handleButtonId: 'Id',
       handleButtonText: 'Button',
       handleButtonColor: 'handleBefaultButtonColor',
       handleButtonBlock: false,
@@ -23,6 +24,7 @@ class ButtonPage extends Component {
 
   render() {
     const {
+      handleButtonId,
       handleButtonText,
       handleButtonBlock,
       handleButtonDisable,
@@ -31,10 +33,10 @@ class ButtonPage extends Component {
       handleButtonSize
     } = this.state;
     const codeString = `import { Button } from '@danacita/mentari';\n<Button${
-      handleButtonColor !== 'handleBefaultButtonColor' ? ` color="${handleButtonColor}"` : ''
-    }${handleButtonSize !== 'defaulthandleButtonSize' ? ` size="${handleButtonSize}"` : ''}${
-      handleButtonBlock ? ' block' : ''
-    }${handleButtonDisable ? ' disabled' : ''}${
+      handleButtonId ? ` id="${handleButtonId}"` : ''
+    }${handleButtonColor !== 'handleBefaultButtonColor' ? ` color="${handleButtonColor}"` : ''}${
+      handleButtonSize !== 'defaulthandleButtonSize' ? ` size="${handleButtonSize}"` : ''
+    }${handleButtonBlock ? ' block' : ''}${handleButtonDisable ? ' disabled' : ''}${
       handleButtonOutline ? ' outline' : ''
     }>${handleButtonText}</Button>`;
     return (
@@ -99,8 +101,18 @@ class ButtonPage extends Component {
         <RightbarShared title="Button">
           <Margin bottom={24}>
             <TextField
+              id="handleButtonId"
+              label="Button id"
+              autoFocus
+              withRedux={false}
+              value={handleButtonId}
+              onChange={e => this.setState({ handleButtonId: e.target.value })}
+            />
+          </Margin>
+          <Margin bottom={24}>
+            <TextField
               id="handleButtonText"
-              label="Button Text"
+              label="Button text"
               autoFocus
               withRedux={false}
               value={handleButtonText}

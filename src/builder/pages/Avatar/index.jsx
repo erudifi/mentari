@@ -12,14 +12,14 @@ class AvatarPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      avatarShape: 'circle'
+      handleAvatarShape: 'circle'
     };
   }
 
   render() {
-    const { avatarShape } = this.state;
+    const { handleAvatarShape } = this.state;
     const codeString = `import { Avatar } from '@danacita/mentari';\n<Avatar profile={{ firstName: 'Arnold', lastName: 'Sebastian' }} ${
-      avatarShape === 'square' ? 'square ' : ''
+      handleAvatarShape === 'square' ? 'square ' : ''
     }/>`;
     return (
       <Fragment>
@@ -44,7 +44,7 @@ class AvatarPage extends Component {
             <Margin top={16}>
               <Avatar
                 profile={{ firstName: 'Arnold', lastName: 'Sebastian' }}
-                square={avatarShape === 'square'}
+                square={handleAvatarShape === 'square'}
               />
             </Margin>
           </DemoShared>
@@ -66,8 +66,8 @@ class AvatarPage extends Component {
                 fieldData={[{ id: 'circle', name: 'Circle' }, { id: 'square', name: 'Square' }]}
                 withRedux={false}
                 block
-                defaultValue={avatarShape}
-                onChange={e => this.setState({ avatarShape: e.target.id })}
+                defaultValue={handleAvatarShape}
+                onChange={e => this.setState({ handleAvatarShape: e.target.id })}
               />
             </Margin>
           </RightbarShared>
