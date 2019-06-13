@@ -37,11 +37,6 @@ const SidebarShared = ({ menuMobile }) => (
           Grid
         </NavLink>
       </li>
-      {/* <li>
-        <NavLink exact activeStyle={activeMenu} to="/typography">
-          Typography
-        </NavLink>
-      </li> */}
     </ul>
     <Margin vertical={20} />
     <h3>Components</h3>
@@ -74,6 +69,11 @@ const SidebarShared = ({ menuMobile }) => (
       <li>
         <NavLink exact activeStyle={activeMenu} to="/flash-message">
           Flash message
+        </NavLink>
+      </li>
+      <li>
+        <NavLink exact activeStyle={activeMenu} to="/file-uploader">
+          File uploader
         </NavLink>
       </li>
       <li>

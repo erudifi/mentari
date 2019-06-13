@@ -11,6 +11,7 @@ import CheckboxPage from './Checkbox';
 import ColorPage from './Color';
 import DatePickerSelectPage from './DatePicker';
 import FlashMessagePage from './FlashMessage';
+import FileUploaderPage from './FileUploader';
 import GridPages from './Grid';
 import MonthPickerPage from './MonthPicker';
 import ProgressPage from './Progress';
@@ -54,6 +55,7 @@ class MainPage extends Component {
               <Route exact path="/color" component={ColorPage} />
               <Route exact path="/date-picker-select" component={DatePickerSelectPage} />
               <Route exact path="/flash-message" component={FlashMessagePage} />
+              <Route exact path="/file-uploader" component={FileUploaderPage} />
               <Route exact path="/grid" component={GridPages} />
               <Route exact path="/month-picker" component={MonthPickerPage} />
               <Route exact path="/progress" component={ProgressPage} />
