@@ -111,6 +111,8 @@ const MonthWrapper = styled.div`
     padding: 8px 16px;
     border-radius: 4px;
     color: white;
+    font-size: 16px;
+    font-family: inherit;
     ${Transition('all ease-in-out 0.2s')} outline: none;
     &::placeholder {
       color: white;

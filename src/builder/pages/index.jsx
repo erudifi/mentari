@@ -12,6 +12,7 @@ import ColorPage from './Color';
 import DatePickerSelectPage from './DatePicker';
 import FlashMessagePage from './FlashMessage';
 import GridPages from './Grid';
+import MonthPickerPage from './MonthPicker';
 import ProgressPage from './Progress';
 import RadioPage from './Radio';
 import SelectPage from './Select';
@@ -54,6 +55,7 @@ class MainPage extends Component {
               <Route exact path="/date-picker-select" component={DatePickerSelectPage} />
               <Route exact path="/flash-message" component={FlashMessagePage} />
               <Route exact path="/grid" component={GridPages} />
+              <Route exact path="/month-picker" component={MonthPickerPage} />
               <Route exact path="/progress" component={ProgressPage} />
               <Route exact path="/radio" component={RadioPage} />
               <Route exact path="/select" component={SelectPage} />
