@@ -45,6 +45,22 @@ class MonthPickerPage extends Component {
               <span>id</span>
               <span>Apply a id to the control element</span>
             </li>
+            <li>
+              <span>name</span>
+              <span>Defines name input Monthpicker</span>
+            </li>
+            <li>
+              <span>label</span>
+              <span>Defines label name Textfield</span>
+            </li>
+            <li>
+              <span>placeholder</span>
+              <span>Apply a short hint that describes the expected value when input focus</span>
+            </li>
+            <li>
+              <span>disabled</span>
+              <span>Apply disabled state of Textfield for unusable and unclickable</span>
+            </li>
           </PropsShared>
         </Margin>
         <DemoShared>
