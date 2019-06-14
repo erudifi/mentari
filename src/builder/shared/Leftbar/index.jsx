@@ -28,6 +28,11 @@ const SidebarShared = ({ menuMobile }) => (
     <h3>Foundation</h3>
     <ul>
       <li>
+        <NavLink exact activeStyle={activeMenu} to="/assets">
+          Assets
+        </NavLink>
+      </li>
+      <li>
         <NavLink exact activeStyle={activeMenu} to="/color">
           Color
         </NavLink>
