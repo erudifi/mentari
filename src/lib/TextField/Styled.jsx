@@ -24,7 +24,7 @@ const TextFieldWrapper = styled.div`
     width: 100%;
     padding: 8px 16px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     ${Transition('all ease-in-out 0.2s')} outline: none;
     &::placeholder {
       color: white;
