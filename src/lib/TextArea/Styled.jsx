@@ -14,6 +14,7 @@ const TextAreaWrapper = styled.div`
     position: relative;
     border: 1px solid ${Color.grey191};
     line-height: 1.6;
+    font-size: 16px;
     display: block;
     min-height: 46px;
     width: 100%;

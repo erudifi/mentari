@@ -27,17 +27,20 @@ const propTypes = {
   prefix: PropTypes.node,
   suffix: PropTypes.node,
   tooltip: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
   disabled: PropTypes.bool,
   optional: PropTypes.bool,
+  withRedux: PropTypes.bool,
   input: PropTypes.shape({
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.any]),
     onBlur: PropTypes.func,
     onChange: PropTypes.func
-  }).isRequired,
+  }),
   meta: PropTypes.shape({
     error: PropTypes.string,
     touched: PropTypes.bool
-  }).isRequired
+  })
 };
 
 const defaultProps = {
@@ -55,7 +58,12 @@ const defaultProps = {
   optional: false,
   userExist: null,
   min: null,
-  max: null
+  max: null,
+  value: null,
+  onChange: null,
+  withRedux: true,
+  input: {},
+  meta: {}
 };
 
 const TextField = ({
@@ -75,64 +83,97 @@ const TextField = ({
   min,
   max,
   userExist,
-  meta: { error, touched }
+  meta: { error, touched },
+  withRedux,
+  onChange,
+  value
 }) => (
-  <TextFieldWrapper
-    valLength={input.value && input.value.length}
-    error={error}
-    touched={touched}
-    hasPrefix={!!prefix}
-    disabled={disabled}
-  >
-    {tooltip ? <TextFieldTooltip>{tooltip}</TextFieldTooltip> : null}
-    {prefix ? <TextFieldPrefix>{prefix}</TextFieldPrefix> : null}
-    {suffix ? <TextFieldSuffix>{suffix}</TextFieldSuffix> : null}
-    <input
-      id={id}
-      data-testid={testid}
-      type={type}
-      placeholder={placeholder}
-      autoComplete={autoComplete}
-      value={input.value === undefined ? '' : input.value}
-      onBlur={input.onBlur}
-      onChange={e => {
-        if (type === 'number') {
-          if (max && e.target.value > max) {
-            return input.onChange(max);
-          }
-          if (min && e.target.value.length !== 0 && e.target.value < min) {
-            return input.onChange(min);
-          }
-          return input.onChange(e.target.value);
-        }
-        return input.onChange(e.target.value);
-      }}
-      autoFocus={autoFocus}
-      tooltip={tooltip}
-      disabled={disabled}
-      min={min}
-      max={max}
-    />
-    <label htmlFor={id}>{label}</label>
-    {optional ? (
-      <TextFieldOptional error={error}>
-        <i>* jika ada</i>
-      </TextFieldOptional>
-    ) : null}
-    {touched && error && (
-      <Margin top={8}>
-        <span style={{ color: Color.red }}>{error}</span>
-        {userExist && error === 'Alamat email sudah terdaftar' ? (
-          <Fragment>
-            . Masuk&nbsp;
-            <Link style={{ color: Color.blue, cursor: 'pointer' }} to={userExist}>
-              di sini
-            </Link>
-          </Fragment>
+  <Fragment>
+    {withRedux ? (
+      <TextFieldWrapper
+        valLength={input.value && input.value.length}
+        error={error}
+        touched={touched}
+        hasPrefix={!!prefix}
+        disabled={disabled}
+      >
+        {tooltip ? <TextFieldTooltip>{tooltip}</TextFieldTooltip> : null}
+        {prefix ? <TextFieldPrefix>{prefix}</TextFieldPrefix> : null}
+        {suffix ? <TextFieldSuffix>{suffix}</TextFieldSuffix> : null}
+        <input
+          id={id}
+          data-testid={testid}
+          type={type}
+          placeholder={placeholder}
+          autoComplete={autoComplete}
+          value={input.value === undefined ? '' : input.value}
+          onBlur={input.onBlur}
+          onChange={e => {
+            if (type === 'number') {
+              if (max && e.target.value > max) {
+                return input.onChange(max);
+              }
+              if (min && e.target.value.length !== 0 && e.target.value < min) {
+                return input.onChange(min);
+              }
+              return input.onChange(e.target.value);
+            }
+            return input.onChange(e.target.value);
+          }}
+          autoFocus={autoFocus}
+          tooltip={tooltip}
+          disabled={disabled}
+          min={min}
+          max={max}
+        />
+        <label htmlFor={id}>{label}</label>
+        {optional ? (
+          <TextFieldOptional error={error}>
+            <i>* jika ada</i>
+          </TextFieldOptional>
         ) : null}
-      </Margin>
+        {touched && error && (
+          <Margin top={8}>
+            <span style={{ color: Color.red }}>{error}</span>
+            {userExist && error === 'Alamat email sudah terdaftar' ? (
+              <Fragment>
+                . Masuk&nbsp;
+                <Link style={{ color: Color.blue, cursor: 'pointer' }} to={userExist}>
+                  di sini
+                </Link>
+              </Fragment>
+            ) : null}
+          </Margin>
+        )}
+      </TextFieldWrapper>
+    ) : (
+      <TextFieldWrapper valLength={value.length} hasPrefix={!!prefix} disabled={disabled}>
+        {tooltip ? <TextFieldTooltip>{tooltip}</TextFieldTooltip> : null}
+        {prefix ? <TextFieldPrefix>{prefix}</TextFieldPrefix> : null}
+        {suffix ? <TextFieldSuffix>{suffix}</TextFieldSuffix> : null}
+        <input
+          id={id}
+          data-testid={testid}
+          type={type}
+          placeholder={placeholder}
+          autoComplete={autoComplete}
+          autoFocus={autoFocus}
+          tooltip={tooltip}
+          disabled={disabled}
+          min={min}
+          max={max}
+          value={value}
+          onChange={onChange}
+        />
+        <label htmlFor={id}>{label}</label>
+        {optional ? (
+          <TextFieldOptional error={error}>
+            <i>* jika ada</i>
+          </TextFieldOptional>
+        ) : null}
+      </TextFieldWrapper>
     )}
-  </TextFieldWrapper>
+  </Fragment>
 );
 
 TextField.propTypes = propTypes;

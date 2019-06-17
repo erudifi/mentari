@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
 import Color from '../Styles/bases/Color';
 import { Checkmark } from '../icons';
 
@@ -35,6 +34,17 @@ const CheckboxInput = styled.input`
       border-radius: 2px;
       display: inline-block;
     }
+    ${props =>
+      props.disabled
+        ? css`
+            color: ${Color.grey191};
+            cursor: not-allowed;
+            &:before {
+              background-color: ${Color.grey239};
+              border: 1px solid ${Color.grey216};
+            }
+          `
+        : null};
   }
   &:checked + label {
     &:before {

@@ -23,6 +23,15 @@ const SwitchInput = styled.input`
       }
     }
   }
+  &:disabled {
+    + span {
+      background-color: ${Color.grey111};
+      cursor: not-allowed;
+      &:before {
+        border: 2px solid ${Color.grey111};
+      }
+    }
+  }
 `;
 
 const SwitchSlider = styled.span`

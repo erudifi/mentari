@@ -1,18 +1,21 @@
 {
   "name": "@danacita/mentari",
   "description": "Dana Cita UI Kit",
-  "version": "0.21.7",
+  "version": "0.21.8",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.jsx,test.jsx,__snapshots__",
+    "build": "react-scripts build && rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.jsx,test.jsx,__snapshots__",
     "lint": "node_modules/.bin/eslint --ext .jsx --ignore-pattern .snap --ignore-pattern .svg src",
     "pretest": "npm run test:clean && npm run lint",
-    "test": "CI=true react-scripts test --coverage",
+    "test": "CI=true react-scripts test --coverage --collectCoverageFrom=src/** --collectCoverageFrom=!src/builder/**",
     "test:clean": "rimraf ./coverage",
     "eject": "react-scripts eject",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "update:snapshot": "npm run test -- -u",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -45,11 +48,16 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "emotion": "^10.0.9",
+    "gh-pages": "^2.0.1",
+    "history": "^4.9.0",
     "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-datepicker": "^2.4.0",
     "react-router-dom": "^5.0.0",
     "react-select": "^2.4.3",
+    "react-syntax-highlighter": "^10.3.0",
     "react-year-month-selector": "0.0.8",
     "styled-components": "^4.2.0"
   },

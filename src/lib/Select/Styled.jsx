@@ -6,6 +6,7 @@ import { Transition } from '../Styles/utils';
 
 const SelectWrapper = styled.div`
   position: relative;
+  font-size: 16px;
   ${props =>
     props.isDisabled
       ? css`

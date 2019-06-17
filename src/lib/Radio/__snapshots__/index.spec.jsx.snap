@@ -5,7 +5,7 @@ exports[`Radio renders correctly 1`] = `
   className="sc-bdVaJa jCNFIm"
 >
   <div
-    className="sc-bwzfXH dmdUcU"
+    className="sc-bwzfXH hCBhkM"
   >
     <input
       checked={false}

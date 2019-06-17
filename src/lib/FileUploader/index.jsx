@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/label-has-for */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Color from '../Styles/bases/Color';
 import { InputWrapper, IconUpload } from './Styled';
@@ -12,24 +12,30 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   defaultLabel: PropTypes.array,
   helpBlock: PropTypes.string,
+  withRedux: PropTypes.bool,
   prefix: PropTypes.node,
   input: PropTypes.shape({
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.any]),
     onBlur: PropTypes.func,
     onChange: PropTypes.func
-  }).isRequired,
+  }),
   meta: PropTypes.shape({
     error: PropTypes.string,
     touched: PropTypes.bool
-  }).isRequired,
-  uploadDocument: PropTypes.func.isRequired,
-  convertFileToBase64: PropTypes.func.isRequired
+  }),
+  uploadDocument: PropTypes.func,
+  convertFileToBase64: PropTypes.func
 };
 
 const defaultProps = {
   defaultLabel: [],
   helpBlock: null,
-  prefix: null
+  prefix: null,
+  input: {},
+  meta: {},
+  withRedux: true,
+  uploadDocument: null,
+  convertFileToBase64: null
 };
 
 class FileUploader extends Component {
@@ -39,6 +45,7 @@ class FileUploader extends Component {
       fileName: undefined
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeWithoutRedux = this.handleChangeWithoutRedux.bind(this);
   }
 
   handleChange() {
@@ -65,6 +72,13 @@ class FileUploader extends Component {
     });
   }
 
+  handleChangeWithoutRedux() {
+    const file = this.fileUpload.files[0];
+    const fileName = file.name;
+    // Set state to persist name of file
+    this.setState({ fileName });
+  }
+
   render() {
     const {
       id,
@@ -72,42 +86,72 @@ class FileUploader extends Component {
       defaultLabel,
       helpBlock,
       prefix,
+      withRedux,
       meta: { error, touched }
     } = this.props;
     const { fileName } = this.state;
 
     return (
-      <InputWrapper touched={touched} error={error}>
-        <IconUpload>{prefix}</IconUpload>
-        <p htmlFor={id}>{label}</p>
-        <input
-          id={id}
-          type="file"
-          onChange={this.handleChange}
-          ref={ref => (this.fileUpload = ref)}
-          accept=".jpg, .jpeg, .png"
-        />
-        <label htmlFor={id} error={error}>
-          <span>
-            {fileName === undefined
-              ? defaultLabel && defaultLabel.length !== 0
-                ? defaultLabel &&
-                  defaultLabel.length !== 0 &&
-                  defaultLabel[defaultLabel.length - 1].attachment
-                    .split('/')[4]
-                    .match(`(?<=%2F)(.*)(?=\\?)`)[0]
-                : label
-              : fileName}
-          </span>
-        </label>
-        {touched && error && <span style={{ color: Color.red }}>{error}</span>}
-        {helpBlock ? (
-          <p className="help-block">
-            *&nbsp;
-            {helpBlock}
-          </p>
-        ) : null}
-      </InputWrapper>
+      <Fragment>
+        {withRedux ? (
+          <InputWrapper touched={touched} error={error}>
+            <IconUpload>{prefix}</IconUpload>
+            <p htmlFor={id}>{label}</p>
+            <input
+              id={id}
+              type="file"
+              onChange={this.handleChange}
+              ref={ref => (this.fileUpload = ref)}
+              accept=".jpg, .jpeg, .png"
+            />
+            <label htmlFor={id} error={error}>
+              <span>
+                {fileName === undefined
+                  ? defaultLabel && defaultLabel.length !== 0
+                    ? defaultLabel &&
+                      defaultLabel.length !== 0 &&
+                      defaultLabel[defaultLabel.length - 1].attachment
+                        .split('/')[4]
+                        .match(`(?<=%2F)(.*)(?=\\?)`)[0]
+                    : label
+                  : fileName}
+              </span>
+            </label>
+            {touched && error && <span style={{ color: Color.red }}>{error}</span>}
+            {helpBlock ? (
+              <p className="help-block">
+                *&nbsp;
+                {helpBlock}
+              </p>
+            ) : null}
+          </InputWrapper>
+        ) : (
+          <InputWrapper>
+            <IconUpload>{prefix}</IconUpload>
+            <p htmlFor={id}>{label}</p>
+            <input
+              id={id}
+              type="file"
+              onChange={this.handleChangeWithoutRedux}
+              ref={ref => (this.fileUpload = ref)}
+              accept=".jpg, .jpeg, .png"
+            />
+            <label htmlFor={id}>
+              <span>
+                {fileName === undefined
+                  ? defaultLabel && defaultLabel.length !== 0
+                    ? defaultLabel &&
+                      defaultLabel.length !== 0 &&
+                      defaultLabel[defaultLabel.length - 1].attachment
+                        .split('/')[4]
+                        .match(`(?<=%2F)(.*)(?=\\?)`)[0]
+                    : label
+                  : fileName}
+              </span>
+            </label>
+          </InputWrapper>
+        )}
+      </Fragment>
     );
   }
 }

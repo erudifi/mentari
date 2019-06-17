@@ -2,7 +2,7 @@
 
 exports[`TextField renders correctly 1`] = `
 <div
-  className="sc-htpNat icsxDp"
+  className="sc-htpNat gBHckt"
   disabled={false}
 >
   <input

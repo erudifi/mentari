@@ -34,11 +34,22 @@ const RadioGroup = styled.div`
 
 const RadioWrapper = styled.div`
   font-size: 14px;
-  display: inline-block;
   margin-right: 16px;
   &:last-child {
     margin-right: 0;
   }
+  ${props =>
+    props.block
+      ? css`
+          display: block;
+          margin-bottom: 8px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        `
+      : css`
+          display: inline-block;
+        `}
 `;
 
 const RadioInput = styled.input`

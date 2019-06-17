@@ -2,7 +2,7 @@
 
 exports[`TextArea renders correctly 1`] = `
 <div
-  className="sc-htpNat hGgDcc"
+  className="sc-htpNat ivXWwS"
   disabled={false}
 >
   <textarea

@@ -4,6 +4,9 @@ import Color from '../Styles/bases/Color';
 const SelectWrapper = styled.div`
   position: relative;
   width: 100%;
+  p.label-select {
+    font-size: 16px;
+  }
   select {
     position: relative;
     background-color: white;
@@ -13,6 +16,7 @@ const SelectWrapper = styled.div`
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    font-size: 16px;
     &.dc-date {
       width: 25%;
     }
@@ -48,6 +52,9 @@ const SelectWrapper = styled.div`
             background-color: ${Color.white};
             cursor: not-allowed;
             border: 1px solid ${Color.grey239};
+          }
+          p.label-select {
+            color: ${Color.grey191};
           }
         `
       : null};

@@ -2,7 +2,7 @@
 
 exports[`ButtonLink renders correctly 1`] = `
 <a
-  className="sc-htpNat kMfSEB"
+  className="sc-htpNat exVXGG"
   data-testid=""
   disabled={false}
   href={null}

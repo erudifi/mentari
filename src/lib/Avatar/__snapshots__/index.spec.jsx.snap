@@ -2,7 +2,8 @@
 
 exports[`Avatar renders correctly 1`] = `
 <div
-  className="sc-bdVaJa hmBmpb"
+  className="sc-bdVaJa cijffQ"
+  style={null}
 >
   <span
     className="sc-bwzfXH cREbSS"

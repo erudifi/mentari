@@ -3,10 +3,11 @@
 exports[`Switch renders correctly 1`] = `
 <label
   className="sc-bdVaJa jBqTSZ"
+  style={null}
 >
   <input
     checked="Value"
-    className="sc-bwzfXH gbvsbZ"
+    className="sc-bwzfXH ibDUs"
     disabled={false}
     onChange={[Function]}
     type="checkbox"
