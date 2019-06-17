@@ -25,7 +25,7 @@ class ProgressPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Progress</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>A progress bar can be used to show a user how far along he/she is in a process.</p>
         <Margin top={24}>
           <PropsShared>
             <li>

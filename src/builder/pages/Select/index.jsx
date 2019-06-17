@@ -26,7 +26,7 @@ class SelectPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Select</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>A element is used to create a drop-down list.</p>
         <Margin top={24}>
           <PropsShared>
             <li>

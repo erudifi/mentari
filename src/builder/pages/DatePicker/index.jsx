@@ -32,7 +32,10 @@ class DatePickerSelectPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Datepicker select</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>
+          Datepicker allows users to choose and input a date through by manually the date into the
+          input field or by using a dropdown.
+        </p>
         <Margin top={24}>
           <PropsShared empty>
             <li>

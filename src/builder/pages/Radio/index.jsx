@@ -27,7 +27,11 @@ class RadioPage extends Component {
       <Fragment>
         <ContentWithRightBar>
           <h1>Radio</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <p>
+            Radio buttons are an input which acts as a select list. Every radio button acts as a
+            boolean, but only one radio button can be selected at any time - one is active by
+            default.
+          </p>
           <Margin top={24}>
             <PropsShared>
               <li>

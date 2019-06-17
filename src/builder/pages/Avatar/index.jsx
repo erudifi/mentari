@@ -25,7 +25,9 @@ class AvatarPage extends Component {
       <Fragment>
         <ContentWithRightBar>
           <h1>Avatar</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <p>
+            Avatars are used to represent a unique entity, be it a person, a group, or a project.
+          </p>
           <Margin top={24}>
             <PropsShared>
               <li>

@@ -77,7 +77,10 @@ class GridPages extends Component {
     return (
       <ContentWithRightBar>
         <h1>Grid</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <p>
+          Use flexbox grid to build layouts of all shapes and sizes thanks to a twelve column
+          system.
+        </p>
         <Margin top={24}>
           <PropsShared>
             <li>

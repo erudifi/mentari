@@ -47,7 +47,10 @@ class TextfieldPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Textfield</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>
+          The TextField wrapper component is a complete form control including a label, input and
+          help text
+        </p>
         <Margin top={24}>
           <PropsShared>
             <li>

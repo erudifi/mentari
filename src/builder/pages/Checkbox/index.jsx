@@ -29,7 +29,7 @@ class AvatarPage extends Component {
       <Fragment>
         <ContentWithRightBar>
           <h1>Checkbox</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <p>A checkbox is an input which acts as a boolean.</p>
           <Margin top={24}>
             <PropsShared>
               <li>

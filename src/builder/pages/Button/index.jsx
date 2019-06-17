@@ -42,7 +42,7 @@ class ButtonPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Button</h1>
-        <p>Button is element represents a clickable, which can be used in forms</p>
+        <p>Button is element represents a clickable, which can be used in forms.</p>
         <Margin top={24}>
           <PropsShared>
             <li>

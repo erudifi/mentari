@@ -24,7 +24,7 @@ class SwitchPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Switch</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>A checkbox is an input which acts as a boolean.</p>
         <Margin top={24}>
           <PropsShared props>
             <li>

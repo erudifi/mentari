@@ -24,7 +24,7 @@ class FlushMessagePage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Flash message</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>Provide contextual feedback messages for typical user actions.</p>
         <Margin top={24}>
           <PropsShared>
             <li>

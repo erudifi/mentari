@@ -28,7 +28,7 @@ class FileUploaderPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>File uploader</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>A element defines a file select field and a Browse button for file uploads.</p>
         <Margin top={24}>
           <PropsShared>
             <li>

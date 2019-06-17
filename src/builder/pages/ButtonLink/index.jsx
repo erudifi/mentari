@@ -48,7 +48,7 @@ class ButtonLikPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Button link</h1>
-        <p>Button link is element represents a clickable, which can be used in forms</p>
+        <p>Button link is element represents a clickable.</p>
         <Margin top={24}>
           <PropsShared>
             <li>

@@ -38,7 +38,10 @@ class MonthPickerPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Monthpicker</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>
+          Monthpicker allows users to choose and input a month through by manually the month into
+          the input field or by using a dropdown.
+        </p>
         <Margin top={24}>
           <PropsShared>
             <li>

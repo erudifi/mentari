@@ -36,7 +36,7 @@ class TextAreaPage extends Component {
     return (
       <ContentWithRightBar>
         <h1>Textfield</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>A element tag defines a multi-line text input control.</p>
         <Margin top={24}>
           <PropsShared>
             <li>
