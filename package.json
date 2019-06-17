@@ -6,14 +6,16 @@
   "module": "dist/index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.jsx,test.jsx,__snapshots__",
+    "build": "react-scripts build && rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.jsx,test.jsx,__snapshots__",
     "lint": "node_modules/.bin/eslint --ext .jsx --ignore-pattern .snap --ignore-pattern .svg src",
     "pretest": "npm run test:clean && npm run lint",
     "test": "CI=true react-scripts test --coverage --collectCoverageFrom=src/** --collectCoverageFrom=!src/builder/**",
     "test:clean": "rimraf ./coverage",
     "eject": "react-scripts eject",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "update:snapshot": "npm run test -- -u"
+    "update:snapshot": "npm run test -- -u",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -46,6 +48,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "emotion": "^10.0.9",
+    "gh-pages": "^2.0.1",
     "history": "^4.9.0",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
