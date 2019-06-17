@@ -2,7 +2,7 @@
 
 exports[`DatePickerSelect renders correctly 1`] = `
 <div
-  className="sc-htpNat frVcjv"
+  className="sc-htpNat kYYGhy"
   disabled={false}
 >
   <input
@@ -11,7 +11,9 @@ exports[`DatePickerSelect renders correctly 1`] = `
     type="hidden"
     value="Value"
   />
-  <p>
+  <p
+    className="label-select"
+  >
     
   </p>
   <select

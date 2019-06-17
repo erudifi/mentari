@@ -2,7 +2,7 @@
 
 exports[`Button renders correctly 1`] = `
 <button
-  className="sc-htpNat hOQbgW"
+  className="sc-htpNat hUCtJz"
   data-testid=""
   disabled={false}
   id=""

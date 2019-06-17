@@ -1,7 +1,7 @@
 {
   "name": "@danacita/mentari",
   "description": "Dana Cita UI Kit",
-  "version": "0.21.7",
+  "version": "0.21.8",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "test": "CI=true react-scripts test --coverage",
     "test:clean": "rimraf ./coverage",
     "eject": "react-scripts eject",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "update:snapshot": "npm run test -- -u"
   },
   "repository": {
     "type": "git",
