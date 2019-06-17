@@ -9,7 +9,7 @@
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.jsx,test.jsx,__snapshots__",
     "lint": "node_modules/.bin/eslint --ext .jsx --ignore-pattern .snap --ignore-pattern .svg src",
     "pretest": "npm run test:clean && npm run lint",
-    "test": "CI=true react-scripts test --coverage",
+    "test": "CI=true react-scripts test --coverage --collectCoverageFrom=src/** --collectCoverageFrom=!src/builder/**",
     "test:clean": "rimraf ./coverage",
     "eject": "react-scripts eject",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
