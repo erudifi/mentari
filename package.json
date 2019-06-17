@@ -14,14 +14,14 @@
     "eject": "react-scripts eject",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "update:snapshot": "npm run test -- -u",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && echo 'design.danacita.co.id' > ./build/CNAME",
     "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/danacita/mentari.git"
   },
-  "homepage": "https://github.com/danacita/mentari#readme",
+  "homepage": "https://design.danacita.co.id",
   "bugs": {
     "url": "https://github.com/danacita/mentari/issues"
   },
