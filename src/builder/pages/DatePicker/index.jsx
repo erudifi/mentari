@@ -63,6 +63,8 @@ class DatePickerSelectPage extends Component {
                   label={handleDatePickerSelectLabel}
                   disabled={handleDatePickerSelectDisable}
                   withRedux={false}
+                  yearMaxOption={2}
+                  yearMinOption={79}
                 />
               </Col>
             </Row>
