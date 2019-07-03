@@ -4,7 +4,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Color from '../Styles/bases/Color';
-import { InputWrapper, IconUpload } from './Styled';
+import { InputWrapper, IconUpload, IconSuccess } from './Styled';
+import Check from './iconCheckmark.svg';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -97,6 +98,15 @@ class FileUploader extends Component {
           <InputWrapper touched={touched} error={error}>
             <IconUpload>{prefix}</IconUpload>
             <p htmlFor={id}>{label}</p>
+            <IconSuccess>
+              {fileName === undefined ? (
+                defaultLabel && defaultLabel.length !== 0 ? (
+                  <img src={Check} alt="Icon" width="16" />
+                ) : null
+              ) : (
+                <img src={Check} alt="Icon" width="16" />
+              )}
+            </IconSuccess>
             <input
               id={id}
               type="file"
@@ -129,6 +139,15 @@ class FileUploader extends Component {
           <InputWrapper>
             <IconUpload>{prefix}</IconUpload>
             <p htmlFor={id}>{label}</p>
+            <IconSuccess withRedux={withRedux}>
+              {fileName === undefined ? (
+                defaultLabel && defaultLabel.length !== 0 ? (
+                  <img src={Check} alt="Icon" width="16" />
+                ) : null
+              ) : (
+                <img src={Check} alt="Icon" width="16" />
+              )}
+            </IconSuccess>
             <input
               id={id}
               type="file"
