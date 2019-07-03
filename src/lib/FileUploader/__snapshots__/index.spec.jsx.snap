@@ -4,13 +4,16 @@ exports[`FileUploader renders correctly 1`] = `
 <div
   className="sc-bdVaJa MXRVf"
 >
+  <div
+    className="sc-bwzfXH eWzXnO"
+  />
   <p
     htmlFor="fileUploader"
   >
     fileUploader
   </p>
   <div
-    className="sc-bwzfXH epKNvQ"
+    className="sc-htpNat bQadWF"
   />
   <input
     accept=".jpg, .jpeg, .png"
