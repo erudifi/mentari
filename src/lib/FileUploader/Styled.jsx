@@ -60,4 +60,16 @@ const IconUpload = styled.div`
   right: 16px;
 `;
 
-export { InputWrapper, IconUpload };
+const IconSuccess = styled.div`
+  position: absolute;
+  top: 38px;
+  right: 46px;
+  ${props =>
+    !props.withRedux &&
+    css`
+      top: 42px;
+      right: 16px;
+    `}
+`;
+
+export { InputWrapper, IconUpload, IconSuccess };

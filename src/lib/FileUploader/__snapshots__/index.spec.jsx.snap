@@ -12,6 +12,9 @@ exports[`FileUploader renders correctly 1`] = `
   >
     fileUploader
   </p>
+  <div
+    className="sc-htpNat bQadWF"
+  />
   <input
     accept=".jpg, .jpeg, .png"
     id="fileUploader"
