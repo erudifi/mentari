@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import Select from 'react-select';
+import Select from 'react-select/lib/Creatable';
 import Color from '../Styles/bases/Color';
 import { Transition } from '../Styles/utils';
 
-const SelectWrapper = styled.div`
+const SelectCreatableWrapper = styled.div`
   position: relative;
   font-size: 16px;
   ${props =>
@@ -27,7 +27,7 @@ const SelectWrapper = styled.div`
   }
 `;
 
-const SelectInput = styled(Select)`
+const SelectCreatableInput = styled(Select)`
   position: relative;
   > .rselect__control {
     border-color: ${Color.grey191};
@@ -40,6 +40,7 @@ const SelectInput = styled(Select)`
     .rselect__dropdown-indicator {
       ${Transition('all 0.2s')};
       transform: rotate(0deg);
+      display: none;
     }
     .rselect__placeholder {
       color: ${Color.grey191};
@@ -87,6 +88,7 @@ const SelectInput = styled(Select)`
       }
       .rselect__dropdown-indicator {
         transform: rotate(-180deg);
+        display: none;
       }
     }
   }
@@ -103,7 +105,7 @@ const SelectInput = styled(Select)`
   }
 `;
 
-const SelectLabel = styled.span`
+const SelectCreatableLabel = styled.span`
   position: absolute;
   color: ${Color.grey191};
   z-index: 20;
@@ -115,4 +117,4 @@ const SelectLabel = styled.span`
   font-weight: 600;
 `;
 
-export { SelectWrapper, SelectInput, SelectLabel };
+export { SelectCreatableWrapper, SelectCreatableInput, SelectCreatableLabel };

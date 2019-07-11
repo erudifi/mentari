@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select renders correctly 1`] = `
+exports[`SelectCreatable renders correctly 1`] = `
 <div
   data-testid={null}
 >
@@ -13,7 +13,7 @@ exports[`Select renders correctly 1`] = `
       
     </span>
     <div
-      className="css-1pcexqc-container sc-bxivhb QvpH"
+      className="css-1pcexqc-container sc-bxivhb ldoiEC"
       onKeyDown={[Function]}
     >
       <div
