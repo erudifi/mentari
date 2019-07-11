@@ -18,6 +18,7 @@ import SwitchField from './Switch';
 import { FloatingArrow, FloatingWhatsAppButton } from './Floating';
 import DatePickerSelect from './DatePickerSelect';
 import FileUploader from './FileUploader';
+import SelectCreatable from './SelectCreatable';
 
 export {
   Avatar,
@@ -48,5 +49,6 @@ export {
   FloatingArrow,
   FloatingWhatsAppButton,
   DatePickerSelect,
-  FileUploader
+  FileUploader,
+  SelectCreatable
 };
