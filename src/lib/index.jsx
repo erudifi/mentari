@@ -1,3 +1,4 @@
+import AsyncSelect from './AsyncSelect';
 import Avatar from './Avatar';
 import Button from './Button';
 import ButtonLink from './ButtonLink';
@@ -21,6 +22,7 @@ import FileUploader from './FileUploader';
 import SelectCreatable from './SelectCreatable';
 
 export {
+  AsyncSelect,
   Avatar,
   Button,
   ButtonLink,
