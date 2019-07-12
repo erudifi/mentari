@@ -1,4 +1,4 @@
-/* eslint-disable class-methods-use-this */
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { css } from 'emotion';
-import { SelectCreatableWrapper, SelectCreatableInput, SelectCreatableLabel } from './Styled';
+import { AsyncSelectWrapper, AsyncSelectInput, AsyncSelectLabel } from './Styled';
 import Color from '../Styles/bases/Color';
 import { Margin } from '../Styles/utils';
 
@@ -26,6 +26,9 @@ const propTypes = {
       name: PropTypes.string
     })
   ).isRequired,
+  cacheOptions: PropTypes.bool,
+  defaultOptions: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  loadOptions: PropTypes.func.isRequired,
   withReset: PropTypes.bool,
   // input prop is passed by redux-form to keep field in sync with state
   input: PropTypes.shape({
@@ -42,6 +45,8 @@ const defaultProps = {
   placeholder: null,
   testid: null,
   isDisabled: false,
+  cacheOptions: false,
+  defaultOptions: false,
   autoFocus: false,
   withReset: false,
   withRedux: true,
@@ -85,22 +90,10 @@ const CustomOption = params => {
   ) : null;
 };
 
-class SelectCreatable extends Component {
+class AsyncSelect extends Component {
   constructor(props) {
     super(props);
     this.handleReset = this.handleReset.bind(this);
-    this.isValidNewOption = this.isValidNewOption.bind(this);
-  }
-
-  isValidNewOption(inputValue, selectValue, selectOptions) {
-    if (
-      inputValue.trim().length === 0 ||
-      selectOptions.find(option => option.id === inputValue) ||
-      selectOptions.find(option => option.name === inputValue)
-    ) {
-      return false;
-    }
-    return true;
   }
 
   handleReset() {
@@ -114,6 +107,9 @@ class SelectCreatable extends Component {
       autoFocus,
       isDisabled,
       fieldData,
+      cacheOptions,
+      defaultOptions,
+      loadOptions,
       withReset,
       customOnChange,
       input,
@@ -127,25 +123,21 @@ class SelectCreatable extends Component {
     return (
       <div data-testid={testid}>
         {withRedux ? (
-          <SelectCreatableWrapper isDisabled={isDisabled}>
-            {input.value !== '' ? <SelectCreatableLabel>{label}</SelectCreatableLabel> : null}
-            <SelectCreatableInput
+          <AsyncSelectWrapper isDisabled={isDisabled}>
+            {input.value !== '' ? <AsyncSelectLabel>{label}</AsyncSelectLabel> : null}
+            <AsyncSelectInput
               placeholder={placeholder}
               autoFocus={autoFocus}
               isDisabled={isDisabled}
               options={fieldData}
+              cacheOptions={cacheOptions}
+              defaultOptions={defaultOptions}
+              loadOptions={loadOptions}
               components={{
                 Option: CustomOption
               }}
               getOptionLabel={option => option.name}
-              getOptionValue={option => option.name}
-              getNewOptionData={(inputValue, optionLabel) => ({
-                id: inputValue.toLowerCase(),
-                name: optionLabel,
-                __isNew__: true
-              })}
-              formatCreateLabel={value => `Tambahkan ${value}`}
-              isValidNewOption={this.isValidNewOption}
+              getOptionValue={option => option.id}
               classNamePrefix="rselect"
               className={classNames({ 'has-error': touched && error })}
               style={{ borderWith: 1, minHeight: 60, maxHeight: 60 }}
@@ -175,7 +167,7 @@ class SelectCreatable extends Component {
               <span
                 style={{
                   position: 'absolute',
-                  right: 12,
+                  right: 36,
                   top: 10,
                   fontSize: 26,
                   color: '#bfbfbf',
@@ -191,29 +183,23 @@ class SelectCreatable extends Component {
                 <span style={{ color: Color.red }}>{error}</span>
               </Margin>
             )}
-          </SelectCreatableWrapper>
+          </AsyncSelectWrapper>
         ) : (
-          <SelectCreatableWrapper isDisabled={isDisabled}>
-            {valueSelect.id !== undefined ? (
-              <SelectCreatableLabel>{label}</SelectCreatableLabel>
-            ) : null}
-            <SelectCreatableInput
+          <AsyncSelectWrapper isDisabled={isDisabled}>
+            {valueSelect.id !== undefined ? <AsyncSelectLabel>{label}</AsyncSelectLabel> : null}
+            <AsyncSelectInput
               placeholder={placeholder}
               autoFocus={autoFocus}
               isDisabled={isDisabled}
               options={fieldData}
+              cacheOptions={cacheOptions}
+              defaultOptions={defaultOptions}
+              loadOptions={loadOptions}
               components={{
                 Option: CustomOption
               }}
               getOptionLabel={option => option.name}
-              getOptionValue={option => option.name}
-              getNewOptionData={(inputValue, optionLabel) => ({
-                id: inputValue.toLowerCase(),
-                name: optionLabel,
-                __isNew__: true
-              })}
-              formatCreateLabel={value => `Tambahkan ${value}`}
-              isValidNewOption={this.isValidNewOption}
+              getOptionValue={option => option.id}
               classNamePrefix="rselect"
               className={classNames({ 'has-error': touched && error })}
               style={{ borderWith: 1, minHeight: 60, maxHeight: 60 }}
@@ -229,14 +215,14 @@ class SelectCreatable extends Component {
                 }
               })}
             />
-          </SelectCreatableWrapper>
+          </AsyncSelectWrapper>
         )}
       </div>
     );
   }
 }
 
-SelectCreatable.propTypes = propTypes;
-SelectCreatable.defaultProps = defaultProps;
+AsyncSelect.propTypes = propTypes;
+AsyncSelect.defaultProps = defaultProps;
 
-export default SelectCreatable;
+export default AsyncSelect;

@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Radio from '.';
+import AsyncSelect from '.';
 
-describe('Radio', () => {
+describe('AsyncSelect', () => {
   it('renders correctly', () => {
     const fieldData = [
       {
@@ -12,13 +12,22 @@ describe('Radio', () => {
       }
     ];
 
+    const loadOptions = () => {};
+
     const input = {
       value: 'Value',
       onChange: () => {}
     };
 
+    const meta = {
+      error: '',
+      touched: false
+    };
+
     const tree = renderer
-      .create(<Radio name="radio" fieldData={fieldData} input={input} />)
+      .create(
+        <AsyncSelect fieldData={fieldData} loadOptions={loadOptions} input={input} meta={meta} />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
