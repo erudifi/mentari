@@ -40,6 +40,6 @@ export const getGoogleStorageFilename = url => {
   const parsedUrl = parseUrl(url);
   const { pathname } = parsedUrl;
   const [,,rawFilename] = pathname.split('/');
-  const [,filename] = rawFilename.split('%2F');
-  return filename;
+  const files = rawFilename.split('%2F');
+  return files[files.length - 1];
 };
