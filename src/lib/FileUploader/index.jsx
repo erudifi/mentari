@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { getGoogleStorageFilename } from '../../utils/urlParser';
+import { getGoogleStorageFilename } from '../utils/urlParser';
 import Color from '../Styles/bases/Color';
 import { InputWrapper, IconSuccess } from './Styled';
 import Check from './iconCheckmark.svg';
