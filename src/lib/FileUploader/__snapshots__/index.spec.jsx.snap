@@ -13,7 +13,6 @@ exports[`FileUploader renders correctly 1`] = `
     className="sc-bwzfXH epKNvQ"
   />
   <input
-    accept=".jpg, .jpeg, .png"
     id="fileUploader"
     onChange={[Function]}
     type="file"
