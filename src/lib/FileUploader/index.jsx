@@ -10,6 +10,7 @@ import Check from './iconCheckmark.svg';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
+  accept: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   defaultLabel: PropTypes.array,
@@ -84,6 +85,7 @@ class FileUploader extends Component {
   render() {
     const {
       id,
+      accept,
       label,
       defaultLabel,
       helpBlock,
@@ -114,7 +116,7 @@ class FileUploader extends Component {
               type="file"
               onChange={this.handleChange}
               ref={ref => (this.fileUpload = ref)}
-              accept=".jpg, .jpeg, .png"
+              accept={accept}
             />
             <label htmlFor={id} error={error}>
               <span>
@@ -154,7 +156,7 @@ class FileUploader extends Component {
               type="file"
               onChange={this.handleChangeWithoutRedux}
               ref={ref => (this.fileUpload = ref)}
-              accept=".jpg, .jpeg, .png"
+              accept={accept}
             />
             <label htmlFor={id}>
               <span>
